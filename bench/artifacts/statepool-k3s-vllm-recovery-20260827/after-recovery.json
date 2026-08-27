@@ -1,0 +1,67 @@
+{
+  "plan": {
+    "contract_version": "statepool-execution-plan.v1",
+    "decision_id": "decision-0000000000000002",
+    "request_id": "post-9560ab1be13541bf92d82f2c4777eae0",
+    "mode": "remote",
+    "worker_id": "0e85d4e3-4faa-444c-9d77-e548e9010a78",
+    "worker_zone": "cloud",
+    "endpoint": "http://127.0.0.1:18138",
+    "state_action": "none",
+    "reason_code": "cloud_capacity",
+    "lease_required": false,
+    "estimated_queue_ms": 0.0,
+    "estimated_restore_ms": 0.0,
+    "estimated_cost": {
+      "currency": "USD",
+      "amount": 0.00022222222222222223
+    },
+    "fallback": "local"
+  },
+  "worker_id": "0e85d4e3-4faa-444c-9d77-e548e9010a78",
+  "elapsed_ms": 626.42,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Memorize the codeword CLOUD-2719. Reply exactly: stored"
+    },
+    {
+      "role": "assistant",
+      "content": "stored"
+    },
+    {
+      "role": "user",
+      "content": "What codeword did I ask you to memorize? Reply with only the codeword."
+    }
+  ],
+  "completion": {
+    "id": "chatcmpl-a58798630d354a5d9008f609224dc6ef",
+    "object": "chat.completion",
+    "created": 1787846682,
+    "model": "qwen2.5-0.5b-instruct-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "reasoning_content": null,
+          "content": "CLOUD-2719",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 79,
+      "total_tokens": 87,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null
+  },
+  "old_worker_id": "bdc987a9-a4e3-4ebb-8a83-37cd0dcfb5c0",
+  "worker_replaced": true,
+  "transcript_replay_verified": true
+}

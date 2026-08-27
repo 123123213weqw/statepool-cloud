@@ -12,6 +12,7 @@ import csv
 import hashlib
 import json
 import math
+import os
 import subprocess
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -68,15 +69,27 @@ def sha256(path: Path) -> str:
 
 
 def git_identity() -> tuple[str, bool]:
-    commit = subprocess.check_output(
-        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
-    ).strip()
-    dirty = bool(
-        subprocess.check_output(
-            ["git", "status", "--porcelain"], cwd=ROOT, text=True
+    try:
+        commit = subprocess.check_output(
+            ["git", "rev-parse", "HEAD"],
+            cwd=ROOT,
+            text=True,
+            stderr=subprocess.DEVNULL,
         ).strip()
-    )
-    return commit, dirty
+        dirty = bool(
+            subprocess.check_output(
+                ["git", "status", "--porcelain"],
+                cwd=ROOT,
+                text=True,
+                stderr=subprocess.DEVNULL,
+            ).strip()
+        )
+        return commit, dirty
+    except (FileNotFoundError, subprocess.CalledProcessError):
+        # Release archives and policy-compliant remote source syncs intentionally
+        # omit .git. Allow the caller to preserve provenance without making the
+        # deterministic replay depend on a VCS checkout.
+        return os.environ.get("STATEPOOL_SOURCE_REVISION", "unavailable"), False
 
 
 def contract_result(policy: str) -> tuple[Path, dict[str, Any]]:

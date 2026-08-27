@@ -67,6 +67,8 @@
 - first desired 3.234 s；3 Ready 14.380 s；last Pod gone 62.260 s
 - 3/3 preStop safe
 - 页脚边界：非 GPU Worker 仿真，不讲模型吞吐
+- 旁证：另一次 k3s 实验真实申请 `nvidia.com/gpu: 1`，Pod 强杀后 40.565 s Ready
+- 页脚边界：真实 GPU Pod 未由 KEDA 驱动、未跨节点
 
 ## 10. A/B/C 可审计回放
 
@@ -75,6 +77,8 @@
 - C vs B：avoided Prefill 51,200 tokens
 - 代价：3.873 GB State transfer
 - 明说没有采集 GPU utilization、production restore P95、B Prefill GPU time
+- 右侧补 live 单样本：A 140.959 ms；B/C 冷启约 39–40 s、二轮约 0.6 s
+- 明标 `SINGLE SAMPLE`：证明路径可运行，不替代 P95/成本/利用率
 
 ## 11. 为什么不是重复造轮子
 
@@ -92,8 +96,8 @@
 
 - MIT、SBOM、第三方 license、ADR、Schema/OpenAPI、Issue/PR、兼容矩阵
 - 已完成：真实 GPU process recovery + KEDA control plane + Cloud Lite
-- 已完成：OpenAI-compatible Adapter 协议闭环，可接现成 vLLM
-- 下一门：固定 vLLM/模型 revision 做真实 GPU 认证，并完成一个拓扑内的 GPU Pod 和 live A/B/C
+- 已完成：固定 vLLM/Qwen2.5/V100 profile、真实 k3s GPU Pod、live A/B/C 单样本
+- 下一门：KEDA 驱动真实 GPU 0→N、多节点重复实验、P95 与利用率
 - 收尾：**State 长期属于用户，GPU 只在需要时出现。**
 
 ## 视觉规则

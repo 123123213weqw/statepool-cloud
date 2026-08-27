@@ -1,0 +1,1 @@
+{"checked_at_ms":1787844986890,"contract_version":"statepool-plugin.v1","dependencies":{"metadata":"in_memory_lease_cas","object_store":"localfs","worker_registry":"degraded"},"status":"degraded"}

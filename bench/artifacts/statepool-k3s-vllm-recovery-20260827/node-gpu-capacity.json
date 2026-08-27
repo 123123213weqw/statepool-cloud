@@ -1,0 +1,196 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "v1",
+            "kind": "Node",
+            "metadata": {
+                "annotations": {
+                    "alpha.kubernetes.io/provided-node-ip": "10.132.218.11",
+                    "flannel.alpha.coreos.com/backend-data": "{\"VNI\":1,\"VtepMAC\":\"e2:45:78:ab:c1:bd\"}",
+                    "flannel.alpha.coreos.com/backend-type": "vxlan",
+                    "flannel.alpha.coreos.com/kube-subnet-manager": "true",
+                    "flannel.alpha.coreos.com/public-ip": "10.132.218.11",
+                    "k3s.io/hostname": "wzu-SYS-4029GP-TRT",
+                    "k3s.io/internal-ip": "10.132.218.11",
+                    "k3s.io/node-args": "[\"server\",\"--disable\",\"traefik\",\"--disable\",\"servicelb\",\"--write-kubeconfig-mode\",\"644\"]",
+                    "k3s.io/node-config-hash": "265CDYBABZYQ6IA5I5IX74JEGT3FKYUDSVQZ2DZTPCJUUASLNIQQ====",
+                    "k3s.io/node-env": "{}",
+                    "node.alpha.kubernetes.io/ttl": "0",
+                    "volumes.kubernetes.io/controller-managed-attach-detach": "true"
+                },
+                "creationTimestamp": "2026-08-27T15:44:58Z",
+                "finalizers": [
+                    "wrangler.cattle.io/node"
+                ],
+                "labels": {
+                    "beta.kubernetes.io/arch": "amd64",
+                    "beta.kubernetes.io/instance-type": "k3s",
+                    "beta.kubernetes.io/os": "linux",
+                    "kubernetes.io/arch": "amd64",
+                    "kubernetes.io/hostname": "wzu-sys-4029gp-trt",
+                    "kubernetes.io/os": "linux",
+                    "node-role.kubernetes.io/control-plane": "true",
+                    "node.kubernetes.io/instance-type": "k3s"
+                },
+                "name": "wzu-sys-4029gp-trt",
+                "resourceVersion": "643",
+                "uid": "f62f04f3-25e9-450d-b5b1-42f67e2b0657"
+            },
+            "spec": {
+                "podCIDR": "10.42.0.0/24",
+                "podCIDRs": [
+                    "10.42.0.0/24"
+                ],
+                "providerID": "k3s://wzu-sys-4029gp-trt"
+            },
+            "status": {
+                "addresses": [
+                    {
+                        "address": "10.132.218.11",
+                        "type": "InternalIP"
+                    },
+                    {
+                        "address": "wzu-SYS-4029GP-TRT",
+                        "type": "Hostname"
+                    }
+                ],
+                "allocatable": {
+                    "cpu": "64",
+                    "ephemeral-storage": "1793598477135",
+                    "hugepages-1Gi": "0",
+                    "hugepages-2Mi": "0",
+                    "memory": "263753632Ki",
+                    "nvidia.com/gpu": "2",
+                    "pods": "110"
+                },
+                "capacity": {
+                    "cpu": "64",
+                    "ephemeral-storage": "1843748436Ki",
+                    "hugepages-1Gi": "0",
+                    "hugepages-2Mi": "0",
+                    "memory": "263753632Ki",
+                    "nvidia.com/gpu": "2",
+                    "pods": "110"
+                },
+                "conditions": [
+                    {
+                        "lastHeartbeatTime": "2026-08-27T15:49:43Z",
+                        "lastTransitionTime": "2026-08-27T15:44:58Z",
+                        "message": "kubelet has sufficient memory available",
+                        "reason": "KubeletHasSufficientMemory",
+                        "status": "False",
+                        "type": "MemoryPressure"
+                    },
+                    {
+                        "lastHeartbeatTime": "2026-08-27T15:49:43Z",
+                        "lastTransitionTime": "2026-08-27T15:44:58Z",
+                        "message": "kubelet has no disk pressure",
+                        "reason": "KubeletHasNoDiskPressure",
+                        "status": "False",
+                        "type": "DiskPressure"
+                    },
+                    {
+                        "lastHeartbeatTime": "2026-08-27T15:49:43Z",
+                        "lastTransitionTime": "2026-08-27T15:44:58Z",
+                        "message": "kubelet has sufficient PID available",
+                        "reason": "KubeletHasSufficientPID",
+                        "status": "False",
+                        "type": "PIDPressure"
+                    },
+                    {
+                        "lastHeartbeatTime": "2026-08-27T15:49:43Z",
+                        "lastTransitionTime": "2026-08-27T15:44:58Z",
+                        "message": "kubelet is posting ready status",
+                        "reason": "KubeletReady",
+                        "status": "True",
+                        "type": "Ready"
+                    }
+                ],
+                "daemonEndpoints": {
+                    "kubeletEndpoint": {
+                        "Port": 10250
+                    }
+                },
+                "declaredFeatures": [
+                    "ExtendWebSocketsToKubelet",
+                    "InPlacePodLevelResourcesVerticalScaling",
+                    "InPlacePodVerticalScalingInitContainers",
+                    "RestartAllContainersOnContainerExits"
+                ],
+                "features": {
+                    "supplementalGroupsPolicy": true
+                },
+                "images": [
+                    {
+                        "names": [
+                            "docker.io/nvidia/cuda:12.4.1-base-ubuntu22.04"
+                        ],
+                        "sizeBytes": 247513301
+                    },
+                    {
+                        "names": [
+                            "nvcr.io/nvidia/k8s-device-plugin:v0.19.3"
+                        ],
+                        "sizeBytes": 158721666
+                    },
+                    {
+                        "names": [
+                            "docker.io/rancher/mirrored-pause:3.10.2"
+                        ],
+                        "sizeBytes": 739083
+                    }
+                ],
+                "nodeInfo": {
+                    "architecture": "amd64",
+                    "bootID": "e029055c-1d96-4cf4-8415-88eec0fa0eb0",
+                    "containerRuntimeVersion": "containerd://2.3.2-k3s2",
+                    "kernelVersion": "6.8.0-136-generic",
+                    "kubeProxyVersion": "",
+                    "kubeletVersion": "v1.36.3+k3s1",
+                    "machineID": "3f97da0100644adb9e6dffe20d27e46a",
+                    "operatingSystem": "linux",
+                    "osImage": "Ubuntu 22.04.5 LTS",
+                    "swap": {
+                        "capacity": 70866952192
+                    },
+                    "systemUUID": "dc125000-d8a2-11e9-8000-ac1f6bf50504"
+                },
+                "runtimeHandlers": [
+                    {
+                        "features": {
+                            "recursiveReadOnlyMounts": true,
+                            "userNamespaces": true
+                        },
+                        "name": ""
+                    },
+                    {
+                        "features": {
+                            "recursiveReadOnlyMounts": true,
+                            "userNamespaces": true
+                        },
+                        "name": "nvidia"
+                    },
+                    {
+                        "features": {
+                            "recursiveReadOnlyMounts": true,
+                            "userNamespaces": true
+                        },
+                        "name": "runc"
+                    },
+                    {
+                        "features": {
+                            "recursiveReadOnlyMounts": false,
+                            "userNamespaces": false
+                        },
+                        "name": "runhcs-wcow-process"
+                    }
+                ]
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

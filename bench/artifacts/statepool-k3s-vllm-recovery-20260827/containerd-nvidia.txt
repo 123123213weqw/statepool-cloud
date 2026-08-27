@@ -1,0 +1,3 @@
+44:[plugins.'io.containerd.cri.v1.runtime'.containerd.runtimes.'nvidia']
+47:[plugins.'io.containerd.cri.v1.runtime'.containerd.runtimes.'nvidia'.options]
+48:  BinaryName = "/usr/bin/nvidia-container-runtime"

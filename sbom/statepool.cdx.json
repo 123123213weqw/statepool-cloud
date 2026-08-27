@@ -3,13 +3,13 @@
   "specVersion": "1.5",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-08-27T00:00:00Z",
+    "timestamp": "2026-08-28T00:00:00Z",
     "component": {
       "type": "application",
-      "bom-ref": "pkg:github/123123213weqw/rwkv-agent@codex-statepool-cloud-plugin",
-      "name": "rwkv-agent",
-      "version": "codex-statepool-cloud-plugin",
-      "purl": "pkg:github/123123213weqw/rwkv-agent@codex-statepool-cloud-plugin",
+      "bom-ref": "pkg:github/123123213weqw/statepool-cloud@v0.1.0",
+      "name": "statepool-cloud",
+      "version": "v0.1.0",
+      "purl": "pkg:github/123123213weqw/statepool-cloud@v0.1.0",
       "licenses": [
         {
           "license": {
@@ -424,10 +424,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/cc@1.3.0",
+      "bom-ref": "pkg:cargo/cc@1.4.4",
       "name": "cc",
-      "version": "1.3.0",
-      "purl": "pkg:cargo/cc@1.3.0",
+      "version": "1.4.4",
+      "purl": "pkg:cargo/cc@1.4.4",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -534,10 +534,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/clap@4.6.4",
+      "bom-ref": "pkg:cargo/clap@4.6.6",
       "name": "clap",
-      "version": "4.6.4",
-      "purl": "pkg:cargo/clap@4.6.4",
+      "version": "4.6.6",
+      "purl": "pkg:cargo/clap@4.6.6",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -556,10 +556,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/clap_builder@4.6.2",
+      "bom-ref": "pkg:cargo/clap_builder@4.6.6",
       "name": "clap_builder",
-      "version": "4.6.2",
-      "purl": "pkg:cargo/clap_builder@4.6.2",
+      "version": "4.6.6",
+      "purl": "pkg:cargo/clap_builder@4.6.6",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -622,28 +622,6 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/clipboard-win@5.4.1",
-      "name": "clipboard-win",
-      "version": "5.4.1",
-      "purl": "pkg:cargo/clipboard-win@5.4.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "BSL-1.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:cargo/cmov@0.5.4",
       "name": "cmov",
       "version": "0.5.4",
@@ -683,28 +661,6 @@
       "licenses": [
         {
           "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/console@0.16.4",
-      "name": "console",
-      "version": "0.16.4",
-      "purl": "pkg:cargo/console@0.16.4",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT"
         }
       ]
     },
@@ -930,54 +886,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/dirs-sys@0.5.0",
-      "name": "dirs-sys",
-      "version": "0.5.0",
-      "purl": "pkg:cargo/dirs-sys@0.5.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/dirs@6.0.0",
-      "name": "dirs",
-      "version": "6.0.0",
-      "purl": "pkg:cargo/dirs@6.0.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/displaydoc@0.2.6",
+      "bom-ref": "pkg:cargo/displaydoc@0.2.7",
       "name": "displaydoc",
-      "version": "0.2.6",
-      "purl": "pkg:cargo/displaydoc@0.2.6",
+      "version": "0.2.7",
+      "purl": "pkg:cargo/displaydoc@0.2.7",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1013,50 +925,6 @@
       "licenses": [
         {
           "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/encode_unicode@1.0.0",
-      "name": "encode_unicode",
-      "version": "1.0.0",
-      "purl": "pkg:cargo/encode_unicode@1.0.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "Apache-2.0 OR MIT"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/endian-type@0.1.2",
-      "name": "endian-type",
-      "version": "0.1.2",
-      "purl": "pkg:cargo/endian-type@0.1.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT"
         }
       ]
     },
@@ -1106,28 +974,6 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/error-code@3.3.2",
-      "name": "error-code",
-      "version": "3.3.2",
-      "purl": "pkg:cargo/error-code@3.3.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "BSL-1.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:cargo/fallible-iterator@0.2.0",
       "name": "fallible-iterator",
       "version": "0.2.0",
@@ -1172,32 +1018,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/fd-lock@4.0.4",
-      "name": "fd-lock",
-      "version": "4.0.4",
-      "purl": "pkg:cargo/fd-lock@4.0.4",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/find-msvc-tools@0.1.9",
+      "bom-ref": "pkg:cargo/find-msvc-tools@0.1.11",
       "name": "find-msvc-tools",
-      "version": "0.1.9",
-      "purl": "pkg:cargo/find-msvc-tools@0.1.9",
+      "version": "0.1.11",
+      "purl": "pkg:cargo/find-msvc-tools@0.1.11",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1260,10 +1084,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/futures-channel@0.3.33",
+      "bom-ref": "pkg:cargo/futures-channel@0.3.34",
       "name": "futures-channel",
-      "version": "0.3.33",
-      "purl": "pkg:cargo/futures-channel@0.3.33",
+      "version": "0.3.34",
+      "purl": "pkg:cargo/futures-channel@0.3.34",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1282,10 +1106,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/futures-core@0.3.33",
+      "bom-ref": "pkg:cargo/futures-core@0.3.34",
       "name": "futures-core",
-      "version": "0.3.33",
-      "purl": "pkg:cargo/futures-core@0.3.33",
+      "version": "0.3.34",
+      "purl": "pkg:cargo/futures-core@0.3.34",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1304,10 +1128,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/futures-io@0.3.33",
+      "bom-ref": "pkg:cargo/futures-io@0.3.34",
       "name": "futures-io",
-      "version": "0.3.33",
-      "purl": "pkg:cargo/futures-io@0.3.33",
+      "version": "0.3.34",
+      "purl": "pkg:cargo/futures-io@0.3.34",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1326,10 +1150,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/futures-macro@0.3.33",
+      "bom-ref": "pkg:cargo/futures-macro@0.3.34",
       "name": "futures-macro",
-      "version": "0.3.33",
-      "purl": "pkg:cargo/futures-macro@0.3.33",
+      "version": "0.3.34",
+      "purl": "pkg:cargo/futures-macro@0.3.34",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1348,10 +1172,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/futures-sink@0.3.33",
+      "bom-ref": "pkg:cargo/futures-sink@0.3.34",
       "name": "futures-sink",
-      "version": "0.3.33",
-      "purl": "pkg:cargo/futures-sink@0.3.33",
+      "version": "0.3.34",
+      "purl": "pkg:cargo/futures-sink@0.3.34",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1370,10 +1194,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/futures-task@0.3.33",
+      "bom-ref": "pkg:cargo/futures-task@0.3.34",
       "name": "futures-task",
-      "version": "0.3.33",
-      "purl": "pkg:cargo/futures-task@0.3.33",
+      "version": "0.3.34",
+      "purl": "pkg:cargo/futures-task@0.3.34",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1392,10 +1216,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/futures-util@0.3.33",
+      "bom-ref": "pkg:cargo/futures-util@0.3.34",
       "name": "futures-util",
-      "version": "0.3.33",
-      "purl": "pkg:cargo/futures-util@0.3.33",
+      "version": "0.3.34",
+      "purl": "pkg:cargo/futures-util@0.3.34",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1568,32 +1392,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/home@0.5.12",
-      "name": "home",
-      "version": "0.5.12",
-      "purl": "pkg:cargo/home@0.5.12",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/http-body-util@0.1.4",
+      "bom-ref": "pkg:cargo/http-body-util@0.1.5",
       "name": "http-body-util",
-      "version": "0.1.4",
-      "purl": "pkg:cargo/http-body-util@0.1.4",
+      "version": "0.1.5",
+      "purl": "pkg:cargo/http-body-util@0.1.5",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1634,10 +1436,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/http@1.4.2",
+      "bom-ref": "pkg:cargo/http@1.5.0",
       "name": "http",
-      "version": "1.4.2",
-      "purl": "pkg:cargo/http@1.4.2",
+      "version": "1.5.0",
+      "purl": "pkg:cargo/http@1.5.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1854,10 +1656,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/icu_collections@2.2.0",
+      "bom-ref": "pkg:cargo/icu_collections@2.3.0",
       "name": "icu_collections",
-      "version": "2.2.0",
-      "purl": "pkg:cargo/icu_collections@2.2.0",
+      "version": "2.3.0",
+      "purl": "pkg:cargo/icu_collections@2.3.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1876,10 +1678,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/icu_locale_core@2.2.0",
+      "bom-ref": "pkg:cargo/icu_locale_core@2.3.0",
       "name": "icu_locale_core",
-      "version": "2.2.0",
-      "purl": "pkg:cargo/icu_locale_core@2.2.0",
+      "version": "2.3.0",
+      "purl": "pkg:cargo/icu_locale_core@2.3.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1898,10 +1700,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/icu_normalizer@2.2.0",
+      "bom-ref": "pkg:cargo/icu_normalizer@2.3.0",
       "name": "icu_normalizer",
-      "version": "2.2.0",
-      "purl": "pkg:cargo/icu_normalizer@2.2.0",
+      "version": "2.3.0",
+      "purl": "pkg:cargo/icu_normalizer@2.3.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1920,10 +1722,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/icu_normalizer_data@2.2.0",
+      "bom-ref": "pkg:cargo/icu_normalizer_data@2.3.0",
       "name": "icu_normalizer_data",
-      "version": "2.2.0",
-      "purl": "pkg:cargo/icu_normalizer_data@2.2.0",
+      "version": "2.3.0",
+      "purl": "pkg:cargo/icu_normalizer_data@2.3.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1942,10 +1744,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/icu_properties@2.2.0",
+      "bom-ref": "pkg:cargo/icu_properties@2.3.0",
       "name": "icu_properties",
-      "version": "2.2.0",
-      "purl": "pkg:cargo/icu_properties@2.2.0",
+      "version": "2.3.0",
+      "purl": "pkg:cargo/icu_properties@2.3.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1964,10 +1766,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/icu_properties_data@2.2.0",
+      "bom-ref": "pkg:cargo/icu_properties_data@2.3.0",
       "name": "icu_properties_data",
-      "version": "2.2.0",
-      "purl": "pkg:cargo/icu_properties_data@2.2.0",
+      "version": "2.3.0",
+      "purl": "pkg:cargo/icu_properties_data@2.3.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -1986,10 +1788,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/icu_provider@2.2.0",
+      "bom-ref": "pkg:cargo/icu_provider@2.3.1",
       "name": "icu_provider",
-      "version": "2.2.0",
-      "purl": "pkg:cargo/icu_provider@2.2.0",
+      "version": "2.3.1",
+      "purl": "pkg:cargo/icu_provider@2.3.1",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -2074,32 +1876,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/indicatif@0.18.6",
-      "name": "indicatif",
-      "version": "0.18.6",
-      "purl": "pkg:cargo/indicatif@0.18.6",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/ipnet@2.12.0",
+      "bom-ref": "pkg:cargo/ipnet@2.12.1",
       "name": "ipnet",
-      "version": "2.12.0",
-      "purl": "pkg:cargo/ipnet@2.12.0",
+      "version": "2.12.1",
+      "purl": "pkg:cargo/ipnet@2.12.1",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -2184,10 +1964,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/js-sys@0.3.103",
+      "bom-ref": "pkg:cargo/js-sys@0.3.104",
       "name": "js-sys",
-      "version": "0.3.103",
-      "purl": "pkg:cargo/js-sys@0.3.103",
+      "version": "0.3.104",
+      "purl": "pkg:cargo/js-sys@0.3.104",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -2228,10 +2008,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/libredox@0.1.18",
+      "bom-ref": "pkg:cargo/libredox@0.1.20",
       "name": "libredox",
-      "version": "0.1.18",
-      "purl": "pkg:cargo/libredox@0.1.18",
+      "version": "0.1.20",
+      "purl": "pkg:cargo/libredox@0.1.20",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -2272,10 +2052,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/litemap@0.8.2",
+      "bom-ref": "pkg:cargo/litemap@0.8.3",
       "name": "litemap",
-      "version": "0.8.2",
-      "purl": "pkg:cargo/litemap@0.8.2",
+      "version": "0.8.3",
+      "purl": "pkg:cargo/litemap@0.8.3",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -2316,10 +2096,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/log@0.4.33",
+      "bom-ref": "pkg:cargo/log@0.4.34",
       "name": "log",
-      "version": "0.4.33",
-      "purl": "pkg:cargo/log@0.4.33",
+      "version": "0.4.34",
+      "purl": "pkg:cargo/log@0.4.34",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -2492,50 +2272,6 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/nibble_vec@0.1.0",
-      "name": "nibble_vec",
-      "version": "0.1.0",
-      "purl": "pkg:cargo/nibble_vec@0.1.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/nix@0.30.1",
-      "name": "nix",
-      "version": "0.30.1",
-      "purl": "pkg:cargo/nix@0.30.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:cargo/num-traits@0.2.19",
       "name": "num-traits",
       "version": "0.2.19",
@@ -2690,28 +2426,6 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/option-ext@0.2.0",
-      "name": "option-ext",
-      "version": "0.2.0",
-      "purl": "pkg:cargo/option-ext@0.2.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MPL-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:cargo/parking_lot@0.12.5",
       "name": "parking_lot",
       "version": "0.12.5",
@@ -2844,28 +2558,6 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/portable-atomic@1.14.0",
-      "name": "portable-atomic",
-      "version": "1.14.0",
-      "purl": "pkg:cargo/portable-atomic@1.14.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "Apache-2.0 OR MIT"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:cargo/postgres-protocol@0.6.12",
       "name": "postgres-protocol",
       "version": "0.6.12",
@@ -2910,10 +2602,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/potential_utf@0.1.5",
+      "bom-ref": "pkg:cargo/potential_utf@0.1.6",
       "name": "potential_utf",
-      "version": "0.1.5",
-      "purl": "pkg:cargo/potential_utf@0.1.5",
+      "version": "0.1.6",
+      "purl": "pkg:cargo/potential_utf@0.1.6",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -2976,10 +2668,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/quinn-proto@0.11.16",
+      "bom-ref": "pkg:cargo/quinn-proto@0.11.17",
       "name": "quinn-proto",
-      "version": "0.11.16",
-      "purl": "pkg:cargo/quinn-proto@0.11.16",
+      "version": "0.11.17",
+      "purl": "pkg:cargo/quinn-proto@0.11.17",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -3086,28 +2778,6 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/radix_trie@0.2.1",
-      "name": "radix_trie",
-      "version": "0.2.1",
-      "purl": "pkg:cargo/radix_trie@0.2.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:cargo/rand@0.10.2",
       "name": "rand",
       "version": "0.10.2",
@@ -3178,28 +2848,6 @@
       "name": "redox_syscall",
       "version": "0.5.18",
       "purl": "pkg:cargo/redox_syscall@0.5.18",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/redox_users@0.5.2",
-      "name": "redox_users",
-      "version": "0.5.2",
-      "purl": "pkg:cargo/redox_users@0.5.2",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -3350,10 +2998,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/rustls-webpki@0.103.13",
+      "bom-ref": "pkg:cargo/rustls-webpki@0.103.15",
       "name": "rustls-webpki",
-      "version": "0.103.13",
-      "purl": "pkg:cargo/rustls-webpki@0.103.13",
+      "version": "0.103.15",
+      "purl": "pkg:cargo/rustls-webpki@0.103.15",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -3372,10 +3020,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/rustls@0.23.42",
+      "bom-ref": "pkg:cargo/rustls@0.23.43",
       "name": "rustls",
-      "version": "0.23.42",
-      "purl": "pkg:cargo/rustls@0.23.42",
+      "version": "0.23.43",
+      "purl": "pkg:cargo/rustls@0.23.43",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -3415,123 +3063,11 @@
       ]
     },
     {
-      "type": "library",
-      "bom-ref": "pkg:cargo/rustyline@17.0.2",
-      "name": "rustyline",
-      "version": "17.0.2",
-      "purl": "pkg:cargo/rustyline@17.0.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT"
-        }
-      ]
-    },
-    {
       "type": "application",
-      "bom-ref": "pkg:cargo/rwkv-agent-cli@0.3.0-beta.2",
-      "name": "rwkv-agent-cli",
-      "version": "0.3.0-beta.2",
-      "purl": "pkg:cargo/rwkv-agent-cli@0.3.0-beta.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT"
-        }
-      ]
-    },
-    {
-      "type": "application",
-      "bom-ref": "pkg:cargo/rwkv-agent-core@0.3.0-beta.2",
-      "name": "rwkv-agent-core",
-      "version": "0.3.0-beta.2",
-      "purl": "pkg:cargo/rwkv-agent-core@0.3.0-beta.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT"
-        }
-      ]
-    },
-    {
-      "type": "application",
-      "bom-ref": "pkg:cargo/rwkv-agent-runtime@0.3.0-beta.2",
-      "name": "rwkv-agent-runtime",
-      "version": "0.3.0-beta.2",
-      "purl": "pkg:cargo/rwkv-agent-runtime@0.3.0-beta.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT"
-        }
-      ]
-    },
-    {
-      "type": "application",
-      "bom-ref": "pkg:cargo/rwkv-agent-server@0.3.0-beta.2",
-      "name": "rwkv-agent-server",
-      "version": "0.3.0-beta.2",
-      "purl": "pkg:cargo/rwkv-agent-server@0.3.0-beta.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT"
-        }
-      ]
-    },
-    {
-      "type": "application",
-      "bom-ref": "pkg:cargo/rwkv-state-runtime@0.3.0-beta.2",
-      "name": "rwkv-state-runtime",
-      "version": "0.3.0-beta.2",
-      "purl": "pkg:cargo/rwkv-state-runtime@0.3.0-beta.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT"
-        }
-      ]
-    },
-    {
-      "type": "application",
-      "bom-ref": "pkg:cargo/rwkv-statepool-cloud-plugin@0.3.0-beta.2",
+      "bom-ref": "pkg:cargo/rwkv-statepool-cloud-plugin@0.1.0",
       "name": "rwkv-statepool-cloud-plugin",
-      "version": "0.3.0-beta.2",
-      "purl": "pkg:cargo/rwkv-statepool-cloud-plugin@0.3.0-beta.2",
+      "version": "0.1.0",
+      "purl": "pkg:cargo/rwkv-statepool-cloud-plugin@0.1.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -3546,10 +3082,10 @@
     },
     {
       "type": "application",
-      "bom-ref": "pkg:cargo/rwkv-statepool-plugin-api@0.3.0-beta.2",
+      "bom-ref": "pkg:cargo/rwkv-statepool-plugin-api@0.1.0",
       "name": "rwkv-statepool-plugin-api",
-      "version": "0.3.0-beta.2",
-      "purl": "pkg:cargo/rwkv-statepool-plugin-api@0.3.0-beta.2",
+      "version": "0.1.0",
+      "purl": "pkg:cargo/rwkv-statepool-plugin-api@0.1.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -4092,10 +3628,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/syn@3.0.3",
+      "bom-ref": "pkg:cargo/syn@3.0.4",
       "name": "syn",
-      "version": "3.0.3",
-      "purl": "pkg:cargo/syn@3.0.3",
+      "version": "3.0.4",
+      "purl": "pkg:cargo/syn@3.0.4",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -4180,10 +3716,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/thiserror-impl@2.0.19",
+      "bom-ref": "pkg:cargo/thiserror-impl@2.0.20",
       "name": "thiserror-impl",
-      "version": "2.0.19",
-      "purl": "pkg:cargo/thiserror-impl@2.0.19",
+      "version": "2.0.20",
+      "purl": "pkg:cargo/thiserror-impl@2.0.20",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -4202,10 +3738,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/thiserror@2.0.19",
+      "bom-ref": "pkg:cargo/thiserror@2.0.20",
       "name": "thiserror",
-      "version": "2.0.19",
-      "purl": "pkg:cargo/thiserror@2.0.19",
+      "version": "2.0.20",
+      "purl": "pkg:cargo/thiserror@2.0.20",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -4224,10 +3760,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/tinystr@0.8.3",
+      "bom-ref": "pkg:cargo/tinystr@0.8.4",
       "name": "tinystr",
-      "version": "0.8.3",
-      "purl": "pkg:cargo/tinystr@0.8.3",
+      "version": "0.8.4",
+      "purl": "pkg:cargo/tinystr@0.8.4",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -4351,28 +3887,6 @@
       "licenses": [
         {
           "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/tokio-stream@0.1.19",
-      "name": "tokio-stream",
-      "version": "0.1.19",
-      "purl": "pkg:cargo/tokio-stream@0.1.19",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT"
         }
       ]
     },
@@ -4708,72 +4222,6 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/unicode-segmentation@1.13.3",
-      "name": "unicode-segmentation",
-      "version": "1.13.3",
-      "purl": "pkg:cargo/unicode-segmentation@1.13.3",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/unicode-width@0.2.2",
-      "name": "unicode-width",
-      "version": "0.2.2",
-      "purl": "pkg:cargo/unicode-width@0.2.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/unit-prefix@0.5.2",
-      "name": "unit-prefix",
-      "version": "0.5.2",
-      "purl": "pkg:cargo/unit-prefix@0.5.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:cargo/untrusted@0.9.0",
       "name": "untrusted",
       "version": "0.9.0",
@@ -4994,10 +4442,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/wasm-bindgen-futures@0.4.76",
+      "bom-ref": "pkg:cargo/wasm-bindgen-futures@0.4.77",
       "name": "wasm-bindgen-futures",
-      "version": "0.4.76",
-      "purl": "pkg:cargo/wasm-bindgen-futures@0.4.76",
+      "version": "0.4.77",
+      "purl": "pkg:cargo/wasm-bindgen-futures@0.4.77",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -5016,10 +4464,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/wasm-bindgen-macro-support@0.2.126",
+      "bom-ref": "pkg:cargo/wasm-bindgen-macro-support@0.2.127",
       "name": "wasm-bindgen-macro-support",
-      "version": "0.2.126",
-      "purl": "pkg:cargo/wasm-bindgen-macro-support@0.2.126",
+      "version": "0.2.127",
+      "purl": "pkg:cargo/wasm-bindgen-macro-support@0.2.127",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -5038,10 +4486,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/wasm-bindgen-macro@0.2.126",
+      "bom-ref": "pkg:cargo/wasm-bindgen-macro@0.2.127",
       "name": "wasm-bindgen-macro",
-      "version": "0.2.126",
-      "purl": "pkg:cargo/wasm-bindgen-macro@0.2.126",
+      "version": "0.2.127",
+      "purl": "pkg:cargo/wasm-bindgen-macro@0.2.127",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -5060,10 +4508,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/wasm-bindgen-shared@0.2.126",
+      "bom-ref": "pkg:cargo/wasm-bindgen-shared@0.2.127",
       "name": "wasm-bindgen-shared",
-      "version": "0.2.126",
-      "purl": "pkg:cargo/wasm-bindgen-shared@0.2.126",
+      "version": "0.2.127",
+      "purl": "pkg:cargo/wasm-bindgen-shared@0.2.127",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -5082,10 +4530,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/wasm-bindgen@0.2.126",
+      "bom-ref": "pkg:cargo/wasm-bindgen@0.2.127",
       "name": "wasm-bindgen",
-      "version": "0.2.126",
-      "purl": "pkg:cargo/wasm-bindgen@0.2.126",
+      "version": "0.2.127",
+      "purl": "pkg:cargo/wasm-bindgen@0.2.127",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -5126,10 +4574,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/web-sys@0.3.103",
+      "bom-ref": "pkg:cargo/web-sys@0.3.104",
       "name": "web-sys",
-      "version": "0.3.103",
-      "purl": "pkg:cargo/web-sys@0.3.103",
+      "version": "0.3.104",
+      "purl": "pkg:cargo/web-sys@0.3.104",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -5165,28 +4613,6 @@
       "licenses": [
         {
           "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/webpki-roots@1.0.9",
-      "name": "webpki-roots",
-      "version": "1.0.9",
-      "purl": "pkg:cargo/webpki-roots@1.0.9",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "CDLA-Permissive-2.0"
         }
       ]
     },
@@ -5368,28 +4794,6 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/windows-sys@0.60.2",
-      "name": "windows-sys",
-      "version": "0.60.2",
-      "purl": "pkg:cargo/windows-sys@0.60.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:cargo/windows-sys@0.61.2",
       "name": "windows-sys",
       "version": "0.61.2",
@@ -5434,54 +4838,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/windows-targets@0.53.5",
-      "name": "windows-targets",
-      "version": "0.53.5",
-      "purl": "pkg:cargo/windows-targets@0.53.5",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:cargo/windows_aarch64_gnullvm@0.52.6",
       "name": "windows_aarch64_gnullvm",
       "version": "0.52.6",
       "purl": "pkg:cargo/windows_aarch64_gnullvm@0.52.6",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/windows_aarch64_gnullvm@0.53.1",
-      "name": "windows_aarch64_gnullvm",
-      "version": "0.53.1",
-      "purl": "pkg:cargo/windows_aarch64_gnullvm@0.53.1",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -5522,54 +4882,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/windows_aarch64_msvc@0.53.1",
-      "name": "windows_aarch64_msvc",
-      "version": "0.53.1",
-      "purl": "pkg:cargo/windows_aarch64_msvc@0.53.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:cargo/windows_i686_gnu@0.52.6",
       "name": "windows_i686_gnu",
       "version": "0.52.6",
       "purl": "pkg:cargo/windows_i686_gnu@0.52.6",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/windows_i686_gnu@0.53.1",
-      "name": "windows_i686_gnu",
-      "version": "0.53.1",
-      "purl": "pkg:cargo/windows_i686_gnu@0.53.1",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -5610,54 +4926,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/windows_i686_gnullvm@0.53.1",
-      "name": "windows_i686_gnullvm",
-      "version": "0.53.1",
-      "purl": "pkg:cargo/windows_i686_gnullvm@0.53.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:cargo/windows_i686_msvc@0.52.6",
       "name": "windows_i686_msvc",
       "version": "0.52.6",
       "purl": "pkg:cargo/windows_i686_msvc@0.52.6",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/windows_i686_msvc@0.53.1",
-      "name": "windows_i686_msvc",
-      "version": "0.53.1",
-      "purl": "pkg:cargo/windows_i686_msvc@0.53.1",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -5698,54 +4970,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/windows_x86_64_gnu@0.53.1",
-      "name": "windows_x86_64_gnu",
-      "version": "0.53.1",
-      "purl": "pkg:cargo/windows_x86_64_gnu@0.53.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:cargo/windows_x86_64_gnullvm@0.52.6",
       "name": "windows_x86_64_gnullvm",
       "version": "0.52.6",
       "purl": "pkg:cargo/windows_x86_64_gnullvm@0.52.6",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:cargo/windows_x86_64_gnullvm@0.53.1",
-      "name": "windows_x86_64_gnullvm",
-      "version": "0.53.1",
-      "purl": "pkg:cargo/windows_x86_64_gnullvm@0.53.1",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -5786,28 +5014,6 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/windows_x86_64_msvc@0.53.1",
-      "name": "windows_x86_64_msvc",
-      "version": "0.53.1",
-      "purl": "pkg:cargo/windows_x86_64_msvc@0.53.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "cargo"
-        },
-        {
-          "name": "cargo:source",
-          "value": "registry+https://github.com/rust-lang/crates.io-index"
-        }
-      ],
-      "licenses": [
-        {
-          "expression": "MIT OR Apache-2.0"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:cargo/wit-bindgen@0.57.1",
       "name": "wit-bindgen",
       "version": "0.57.1",
@@ -5830,10 +5036,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/writeable@0.6.3",
+      "bom-ref": "pkg:cargo/writeable@0.6.4",
       "name": "writeable",
-      "version": "0.6.3",
-      "purl": "pkg:cargo/writeable@0.6.3",
+      "version": "0.6.4",
+      "purl": "pkg:cargo/writeable@0.6.4",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -5962,10 +5168,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/zerotrie@0.2.4",
+      "bom-ref": "pkg:cargo/zerotrie@0.2.5",
       "name": "zerotrie",
-      "version": "0.2.4",
-      "purl": "pkg:cargo/zerotrie@0.2.4",
+      "version": "0.2.5",
+      "purl": "pkg:cargo/zerotrie@0.2.5",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -5984,10 +5190,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/zerovec-derive@0.11.3",
+      "bom-ref": "pkg:cargo/zerovec-derive@0.11.6",
       "name": "zerovec-derive",
-      "version": "0.11.3",
-      "purl": "pkg:cargo/zerovec-derive@0.11.3",
+      "version": "0.11.6",
+      "purl": "pkg:cargo/zerovec-derive@0.11.6",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -6006,10 +5212,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:cargo/zerovec@0.11.6",
+      "bom-ref": "pkg:cargo/zerovec@0.11.8",
       "name": "zerovec",
-      "version": "0.11.6",
-      "purl": "pkg:cargo/zerovec@0.11.6",
+      "version": "0.11.8",
+      "purl": "pkg:cargo/zerovec@0.11.8",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -6045,6 +5251,27 @@
       "licenses": [
         {
           "expression": "MIT"
+        }
+      ]
+    },
+    {
+      "type": "container",
+      "bom-ref": "pkg:oci/ghcr.io/123123213weqw/rwkv-agent-controller@0.3.0-beta.2",
+      "name": "ghcr.io/123123213weqw/rwkv-agent-controller",
+      "version": "0.3.0-beta.2",
+      "purl": "pkg:oci/ghcr.io/123123213weqw/rwkv-agent-controller@0.3.0-beta.2",
+      "properties": [
+        {
+          "name": "statepool:compose-service",
+          "value": "agent"
+        },
+        {
+          "name": "statepool:ecosystem",
+          "value": "container"
+        },
+        {
+          "name": "statepool:verification",
+          "value": "version-pinned; see COMPATIBILITY.md for runtime status"
         }
       ]
     },
@@ -6155,31 +5382,10 @@
     },
     {
       "type": "container",
-      "bom-ref": "pkg:oci/rwkv-agent-controller@0.3.0-beta.2-dev",
-      "name": "rwkv-agent-controller",
-      "version": "0.3.0-beta.2-dev",
-      "purl": "pkg:oci/rwkv-agent-controller@0.3.0-beta.2-dev",
-      "properties": [
-        {
-          "name": "statepool:compose-service",
-          "value": "agent"
-        },
-        {
-          "name": "statepool:ecosystem",
-          "value": "container"
-        },
-        {
-          "name": "statepool:verification",
-          "value": "version-pinned; see COMPATIBILITY.md for runtime status"
-        }
-      ]
-    },
-    {
-      "type": "container",
-      "bom-ref": "pkg:oci/rwkv-statepool-cloud-plugin@0.3.0-beta.2-dev",
-      "name": "rwkv-statepool-cloud-plugin",
-      "version": "0.3.0-beta.2-dev",
-      "purl": "pkg:oci/rwkv-statepool-cloud-plugin@0.3.0-beta.2-dev",
+      "bom-ref": "pkg:oci/statepool-cloud@0.1.0",
+      "name": "statepool-cloud",
+      "version": "0.1.0",
+      "purl": "pkg:oci/statepool-cloud@0.1.0",
       "properties": [
         {
           "name": "statepool:compose-service",
@@ -6196,121 +5402,23 @@
       ]
     },
     {
-      "type": "library",
-      "bom-ref": "pkg:pypi/aiohappyeyeballs@2.7.1",
-      "name": "aiohappyeyeballs",
-      "version": "2.7.1",
-      "purl": "pkg:pypi/aiohappyeyeballs@2.7.1",
+      "type": "container",
+      "bom-ref": "pkg:oci/statepool-openai-worker@0.1.0",
+      "name": "statepool-openai-worker",
+      "version": "0.1.0",
+      "purl": "pkg:oci/statepool-openai-worker@0.1.0",
       "properties": [
         {
-          "name": "statepool:ecosystem",
-          "value": "python"
+          "name": "statepool:compose-service",
+          "value": "openai-worker"
         },
         {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/aiohttp@3.14.3",
-      "name": "aiohttp",
-      "version": "3.14.3",
-      "purl": "pkg:pypi/aiohttp@3.14.3",
-      "properties": [
-        {
           "name": "statepool:ecosystem",
-          "value": "python"
+          "value": "container"
         },
         {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/aiosignal@1.4.0",
-      "name": "aiosignal",
-      "version": "1.4.0",
-      "purl": "pkg:pypi/aiosignal@1.4.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/annotated-doc@0.0.4",
-      "name": "annotated-doc",
-      "version": "0.0.4",
-      "purl": "pkg:pypi/annotated-doc@0.0.4",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/annotated-types@0.8.0",
-      "name": "annotated-types",
-      "version": "0.8.0",
-      "purl": "pkg:pypi/annotated-types@0.8.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/anyio@4.14.2",
-      "name": "anyio",
-      "version": "4.14.2",
-      "purl": "pkg:pypi/anyio@4.14.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/async-timeout@5.0.1",
-      "name": "async-timeout",
-      "version": "5.0.1",
-      "purl": "pkg:pypi/async-timeout@5.0.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
+          "name": "statepool:verification",
+          "value": "version-pinned; see COMPATIBILITY.md for runtime status"
         }
       ]
     },
@@ -6333,95 +5441,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:pypi/babel@2.18.0",
-      "name": "babel",
-      "version": "2.18.0",
-      "purl": "pkg:pypi/babel@2.18.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/brotli@1.2.0",
-      "name": "brotli",
-      "version": "1.2.0",
-      "purl": "pkg:pypi/brotli@1.2.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/certifi@2026.7.22",
-      "name": "certifi",
-      "version": "2026.7.22",
-      "purl": "pkg:pypi/certifi@2026.7.22",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/chardet@7.4.3",
-      "name": "chardet",
-      "version": "7.4.3",
-      "purl": "pkg:pypi/chardet@7.4.3",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/charset-normalizer@3.4.9",
-      "name": "charset-normalizer",
-      "version": "3.4.9",
-      "purl": "pkg:pypi/charset-normalizer@3.4.9",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/click@8.4.2",
-      "name": "click",
-      "version": "8.4.2",
-      "purl": "pkg:pypi/click@8.4.2",
+      "bom-ref": "pkg:pypi/build@1.5.0",
+      "name": "build",
+      "version": "1.5.0",
+      "purl": "pkg:pypi/build@1.5.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -6452,108 +5475,6 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:pypi/courlan@1.4.0",
-      "name": "courlan",
-      "version": "1.4.0",
-      "purl": "pkg:pypi/courlan@1.4.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/cssselect@1.4.0",
-      "name": "cssselect",
-      "version": "1.4.0",
-      "purl": "pkg:pypi/cssselect@1.4.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/cuda-bindings@13.3.1",
-      "name": "cuda-bindings",
-      "version": "13.3.1",
-      "purl": "pkg:pypi/cuda-bindings@13.3.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/cuda-pathfinder@1.6.0",
-      "name": "cuda-pathfinder",
-      "version": "1.6.0",
-      "purl": "pkg:pypi/cuda-pathfinder@1.6.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/cuda-toolkit@13.0.3.0",
-      "name": "cuda-toolkit",
-      "version": "13.0.3.0",
-      "purl": "pkg:pypi/cuda-toolkit@13.0.3.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/dateparser@1.4.1",
-      "name": "dateparser",
-      "version": "1.4.1",
-      "purl": "pkg:pypi/dateparser@1.4.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:pypi/exceptiongroup@1.3.1",
       "name": "exceptiongroup",
       "version": "1.3.1",
@@ -6571,231 +5492,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:pypi/faiss-cpu@1.14.3",
-      "name": "faiss-cpu",
-      "version": "1.14.3",
-      "purl": "pkg:pypi/faiss-cpu@1.14.3",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/fastapi@0.140.7",
-      "name": "fastapi",
-      "version": "0.140.7",
-      "purl": "pkg:pypi/fastapi@0.140.7",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/fastwarc@1.0.9",
-      "name": "fastwarc",
-      "version": "1.0.9",
-      "purl": "pkg:pypi/fastwarc@1.0.9",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/filelock@3.32.0",
-      "name": "filelock",
-      "version": "3.32.0",
-      "purl": "pkg:pypi/filelock@3.32.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/frozenlist@1.8.0",
-      "name": "frozenlist",
-      "version": "1.8.0",
-      "purl": "pkg:pypi/frozenlist@1.8.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/fsspec@2026.6.0",
-      "name": "fsspec",
-      "version": "2026.6.0",
-      "purl": "pkg:pypi/fsspec@2026.6.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/greenlet@3.5.4",
-      "name": "greenlet",
-      "version": "3.5.4",
-      "purl": "pkg:pypi/greenlet@3.5.4",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/h11@0.16.0",
-      "name": "h11",
-      "version": "0.16.0",
-      "purl": "pkg:pypi/h11@0.16.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/hf-xet@1.5.2",
-      "name": "hf-xet",
-      "version": "1.5.2",
-      "purl": "pkg:pypi/hf-xet@1.5.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/htmldate@1.10.0",
-      "name": "htmldate",
-      "version": "1.10.0",
-      "purl": "pkg:pypi/htmldate@1.10.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/httpcore@1.0.9",
-      "name": "httpcore",
-      "version": "1.0.9",
-      "purl": "pkg:pypi/httpcore@1.0.9",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/httpx@0.28.1",
-      "name": "httpx",
-      "version": "0.28.1",
-      "purl": "pkg:pypi/httpx@0.28.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/huggingface-hub@1.24.0",
-      "name": "huggingface-hub",
-      "version": "1.24.0",
-      "purl": "pkg:pypi/huggingface-hub@1.24.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/idna@3.18",
-      "name": "idna",
-      "version": "3.18",
-      "purl": "pkg:pypi/idna@3.18",
+      "bom-ref": "pkg:pypi/importlib-metadata@9.0.0",
+      "name": "importlib-metadata",
+      "version": "9.0.0",
+      "purl": "pkg:pypi/importlib-metadata@9.0.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -6826,10 +5526,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:pypi/jieba@0.42.1",
-      "name": "jieba",
-      "version": "0.42.1",
-      "purl": "pkg:pypi/jieba@0.42.1",
+      "bom-ref": "pkg:pypi/jsonschema-specifications@2025.9.1",
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "purl": "pkg:pypi/jsonschema-specifications@2025.9.1",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -6843,10 +5543,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:pypi/jinja2@3.1.6",
-      "name": "jinja2",
-      "version": "3.1.6",
-      "purl": "pkg:pypi/jinja2@3.1.6",
+      "bom-ref": "pkg:pypi/jsonschema@4.26.0",
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "purl": "pkg:pypi/jsonschema@4.26.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -6860,554 +5560,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:pypi/joblib@1.5.3",
-      "name": "joblib",
-      "version": "1.5.3",
-      "purl": "pkg:pypi/joblib@1.5.3",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/justext@3.0.2",
-      "name": "justext",
-      "version": "3.0.2",
-      "purl": "pkg:pypi/justext@3.0.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/lxml-html-clean@0.4.5",
-      "name": "lxml-html-clean",
-      "version": "0.4.5",
-      "purl": "pkg:pypi/lxml-html-clean@0.4.5",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/lxml@6.1.1",
-      "name": "lxml",
-      "version": "6.1.1",
-      "purl": "pkg:pypi/lxml@6.1.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/markdown-it-py@4.2.0",
-      "name": "markdown-it-py",
-      "version": "4.2.0",
-      "purl": "pkg:pypi/markdown-it-py@4.2.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/markupsafe@3.0.3",
-      "name": "markupsafe",
-      "version": "3.0.3",
-      "purl": "pkg:pypi/markupsafe@3.0.3",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/mdurl@0.1.2",
-      "name": "mdurl",
-      "version": "0.1.2",
-      "purl": "pkg:pypi/mdurl@0.1.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/mpmath@1.3.0",
-      "name": "mpmath",
-      "version": "1.3.0",
-      "purl": "pkg:pypi/mpmath@1.3.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/multidict@6.7.1",
-      "name": "multidict",
-      "version": "6.7.1",
-      "purl": "pkg:pypi/multidict@6.7.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/narwhals@2.24.0",
-      "name": "narwhals",
-      "version": "2.24.0",
-      "purl": "pkg:pypi/narwhals@2.24.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/networkx@3.4.2",
-      "name": "networkx",
-      "version": "3.4.2",
-      "purl": "pkg:pypi/networkx@3.4.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/networkx@3.6.1",
-      "name": "networkx",
-      "version": "3.6.1",
-      "purl": "pkg:pypi/networkx@3.6.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/numpy@2.2.6",
-      "name": "numpy",
-      "version": "2.2.6",
-      "purl": "pkg:pypi/numpy@2.2.6",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/numpy@2.4.6",
-      "name": "numpy",
-      "version": "2.4.6",
-      "purl": "pkg:pypi/numpy@2.4.6",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/numpy@2.5.1",
-      "name": "numpy",
-      "version": "2.5.1",
-      "purl": "pkg:pypi/numpy@2.5.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/nvidia-cublas@13.1.1.3",
-      "name": "nvidia-cublas",
-      "version": "13.1.1.3",
-      "purl": "pkg:pypi/nvidia-cublas@13.1.1.3",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/nvidia-cuda-cupti@13.0.85",
-      "name": "nvidia-cuda-cupti",
-      "version": "13.0.85",
-      "purl": "pkg:pypi/nvidia-cuda-cupti@13.0.85",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/nvidia-cuda-nvrtc@13.0.88",
-      "name": "nvidia-cuda-nvrtc",
-      "version": "13.0.88",
-      "purl": "pkg:pypi/nvidia-cuda-nvrtc@13.0.88",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/nvidia-cuda-runtime@13.0.96",
-      "name": "nvidia-cuda-runtime",
-      "version": "13.0.96",
-      "purl": "pkg:pypi/nvidia-cuda-runtime@13.0.96",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/nvidia-cudnn-cu13@9.20.0.48",
-      "name": "nvidia-cudnn-cu13",
-      "version": "9.20.0.48",
-      "purl": "pkg:pypi/nvidia-cudnn-cu13@9.20.0.48",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/nvidia-cufft@12.0.0.61",
-      "name": "nvidia-cufft",
-      "version": "12.0.0.61",
-      "purl": "pkg:pypi/nvidia-cufft@12.0.0.61",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/nvidia-cufile@1.15.1.6",
-      "name": "nvidia-cufile",
-      "version": "1.15.1.6",
-      "purl": "pkg:pypi/nvidia-cufile@1.15.1.6",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/nvidia-curand@10.4.0.35",
-      "name": "nvidia-curand",
-      "version": "10.4.0.35",
-      "purl": "pkg:pypi/nvidia-curand@10.4.0.35",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/nvidia-cusolver@12.0.4.66",
-      "name": "nvidia-cusolver",
-      "version": "12.0.4.66",
-      "purl": "pkg:pypi/nvidia-cusolver@12.0.4.66",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/nvidia-cusparse@12.6.3.3",
-      "name": "nvidia-cusparse",
-      "version": "12.6.3.3",
-      "purl": "pkg:pypi/nvidia-cusparse@12.6.3.3",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/nvidia-cusparselt-cu13@0.8.1",
-      "name": "nvidia-cusparselt-cu13",
-      "version": "0.8.1",
-      "purl": "pkg:pypi/nvidia-cusparselt-cu13@0.8.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/nvidia-nccl-cu13@2.29.7",
-      "name": "nvidia-nccl-cu13",
-      "version": "2.29.7",
-      "purl": "pkg:pypi/nvidia-nccl-cu13@2.29.7",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/nvidia-nvjitlink@13.3.33",
-      "name": "nvidia-nvjitlink",
-      "version": "13.3.33",
-      "purl": "pkg:pypi/nvidia-nvjitlink@13.3.33",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/nvidia-nvshmem-cu13@3.4.5",
-      "name": "nvidia-nvshmem-cu13",
-      "version": "3.4.5",
-      "purl": "pkg:pypi/nvidia-nvshmem-cu13@3.4.5",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/nvidia-nvtx@13.0.85",
-      "name": "nvidia-nvtx",
-      "version": "13.0.85",
-      "purl": "pkg:pypi/nvidia-nvtx@13.0.85",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/opencc-python-reimplemented@0.1.7",
-      "name": "opencc-python-reimplemented",
-      "version": "0.1.7",
-      "purl": "pkg:pypi/opencc-python-reimplemented@0.1.7",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/packaging@26.2",
+      "bom-ref": "pkg:pypi/packaging@26.3",
       "name": "packaging",
-      "version": "26.2",
-      "purl": "pkg:pypi/packaging@26.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/playwright@1.61.0",
-      "name": "playwright",
-      "version": "1.61.0",
-      "purl": "pkg:pypi/playwright@1.61.0",
+      "version": "26.3",
+      "purl": "pkg:pypi/packaging@26.3",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -7438,95 +5594,27 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:pypi/propcache@0.5.2",
-      "name": "propcache",
-      "version": "0.5.2",
-      "purl": "pkg:pypi/propcache@0.5.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/pyarrow@25.0.0",
-      "name": "pyarrow",
-      "version": "25.0.0",
-      "purl": "pkg:pypi/pyarrow@25.0.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/pydantic-core@2.46.4",
-      "name": "pydantic-core",
-      "version": "2.46.4",
-      "purl": "pkg:pypi/pydantic-core@2.46.4",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/pydantic@2.13.4",
-      "name": "pydantic",
-      "version": "2.13.4",
-      "purl": "pkg:pypi/pydantic@2.13.4",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/pyee@13.0.1",
-      "name": "pyee",
-      "version": "13.0.1",
-      "purl": "pkg:pypi/pyee@13.0.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/pygments@2.20.0",
+      "bom-ref": "pkg:pypi/pygments@2.21.0",
       "name": "pygments",
-      "version": "2.20.0",
-      "purl": "pkg:pypi/pygments@2.20.0",
+      "version": "2.21.0",
+      "purl": "pkg:pypi/pygments@2.21.0",
+      "properties": [
+        {
+          "name": "statepool:ecosystem",
+          "value": "python"
+        },
+        {
+          "name": "uv:source",
+          "value": "{\"registry\": \"https://pypi.org/simple\"}"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyproject-hooks@1.2.0",
+      "name": "pyproject-hooks",
+      "version": "1.2.0",
+      "purl": "pkg:pypi/pyproject-hooks@1.2.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -7557,40 +5645,6 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:pypi/python-dateutil@2.9.0.post0",
-      "name": "python-dateutil",
-      "version": "2.9.0.post0",
-      "purl": "pkg:pypi/python-dateutil@2.9.0.post0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/pytz@2026.2",
-      "name": "pytz",
-      "version": "2026.2",
-      "purl": "pkg:pypi/pytz@2026.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:pypi/pyyaml@6.0.3",
       "name": "pyyaml",
       "version": "6.0.3",
@@ -7608,10 +5662,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:pypi/readability-lxml@0.8.4.1",
-      "name": "readability-lxml",
-      "version": "0.8.4.1",
-      "purl": "pkg:pypi/readability-lxml@0.8.4.1",
+      "bom-ref": "pkg:pypi/referencing@0.37.0",
+      "name": "referencing",
+      "version": "0.37.0",
+      "purl": "pkg:pypi/referencing@0.37.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -7625,10 +5679,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:pypi/regex@2026.7.19",
-      "name": "regex",
-      "version": "2026.7.19",
-      "purl": "pkg:pypi/regex@2026.7.19",
+      "bom-ref": "pkg:pypi/rpds-py@0.30.0",
+      "name": "rpds-py",
+      "version": "0.30.0",
+      "purl": "pkg:pypi/rpds-py@0.30.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -7642,10 +5696,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:pypi/resiliparse@1.0.9",
-      "name": "resiliparse",
-      "version": "1.0.9",
-      "purl": "pkg:pypi/resiliparse@1.0.9",
+      "bom-ref": "pkg:pypi/rpds-py@2026.6.3",
+      "name": "rpds-py",
+      "version": "2026.6.3",
+      "purl": "pkg:pypi/rpds-py@2026.6.3",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -7659,10 +5713,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:pypi/rich@15.0.0",
-      "name": "rich",
-      "version": "15.0.0",
-      "purl": "pkg:pypi/rich@15.0.0",
+      "bom-ref": "pkg:pypi/ruff@0.15.22",
+      "name": "ruff",
+      "version": "0.15.22",
+      "purl": "pkg:pypi/ruff@0.15.22",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -7676,10 +5730,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:pypi/rwkv-search@0.3.0b2",
-      "name": "rwkv-search",
-      "version": "0.3.0b2",
-      "purl": "pkg:pypi/rwkv-search@0.3.0b2",
+      "bom-ref": "pkg:pypi/statepool-cloud@0.1.0",
+      "name": "statepool-cloud",
+      "version": "0.1.0",
+      "purl": "pkg:pypi/statepool-cloud@0.1.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -7693,384 +5747,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:pypi/safetensors@0.8.0",
-      "name": "safetensors",
-      "version": "0.8.0",
-      "purl": "pkg:pypi/safetensors@0.8.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/scikit-learn@1.7.2",
-      "name": "scikit-learn",
-      "version": "1.7.2",
-      "purl": "pkg:pypi/scikit-learn@1.7.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/scikit-learn@1.9.0",
-      "name": "scikit-learn",
-      "version": "1.9.0",
-      "purl": "pkg:pypi/scikit-learn@1.9.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/scipy@1.15.3",
-      "name": "scipy",
-      "version": "1.15.3",
-      "purl": "pkg:pypi/scipy@1.15.3",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/scipy@1.17.1",
-      "name": "scipy",
-      "version": "1.17.1",
-      "purl": "pkg:pypi/scipy@1.17.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/scipy@1.18.0",
-      "name": "scipy",
-      "version": "1.18.0",
-      "purl": "pkg:pypi/scipy@1.18.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/selectolax@0.4.11",
-      "name": "selectolax",
-      "version": "0.4.11",
-      "purl": "pkg:pypi/selectolax@0.4.11",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/sentence-transformers@5.6.1",
-      "name": "sentence-transformers",
-      "version": "5.6.1",
-      "purl": "pkg:pypi/sentence-transformers@5.6.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/setuptools@83.0.0",
-      "name": "setuptools",
-      "version": "83.0.0",
-      "purl": "pkg:pypi/setuptools@83.0.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/shellingham@1.5.4",
-      "name": "shellingham",
-      "version": "1.5.4",
-      "purl": "pkg:pypi/shellingham@1.5.4",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/six@1.17.0",
-      "name": "six",
-      "version": "1.17.0",
-      "purl": "pkg:pypi/six@1.17.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/starlette@1.3.1",
-      "name": "starlette",
-      "version": "1.3.1",
-      "purl": "pkg:pypi/starlette@1.3.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/sympy@1.14.0",
-      "name": "sympy",
-      "version": "1.14.0",
-      "purl": "pkg:pypi/sympy@1.14.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/threadpoolctl@3.6.0",
-      "name": "threadpoolctl",
-      "version": "3.6.0",
-      "purl": "pkg:pypi/threadpoolctl@3.6.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/tld@0.13.2",
-      "name": "tld",
-      "version": "0.13.2",
-      "purl": "pkg:pypi/tld@0.13.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/tokenizers@0.22.2",
-      "name": "tokenizers",
-      "version": "0.22.2",
-      "purl": "pkg:pypi/tokenizers@0.22.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:pypi/tomli@2.4.1",
       "name": "tomli",
       "version": "2.4.1",
       "purl": "pkg:pypi/tomli@2.4.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/torch@2.13.0",
-      "name": "torch",
-      "version": "2.13.0",
-      "purl": "pkg:pypi/torch@2.13.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/tqdm@4.69.1",
-      "name": "tqdm",
-      "version": "4.69.1",
-      "purl": "pkg:pypi/tqdm@4.69.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/trafilatura@2.1.0",
-      "name": "trafilatura",
-      "version": "2.1.0",
-      "purl": "pkg:pypi/trafilatura@2.1.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/transformers@5.14.1",
-      "name": "transformers",
-      "version": "5.14.1",
-      "purl": "pkg:pypi/transformers@5.14.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/triton@3.7.1",
-      "name": "triton",
-      "version": "3.7.1",
-      "purl": "pkg:pypi/triton@3.7.1",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/typer@0.27.0",
-      "name": "typer",
-      "version": "0.27.0",
-      "purl": "pkg:pypi/typer@0.27.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -8101,95 +5781,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:pypi/typing-inspection@0.4.2",
-      "name": "typing-inspection",
-      "version": "0.4.2",
-      "purl": "pkg:pypi/typing-inspection@0.4.2",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/tzdata@2026.3",
-      "name": "tzdata",
-      "version": "2026.3",
-      "purl": "pkg:pypi/tzdata@2026.3",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/tzlocal@5.4.4",
-      "name": "tzlocal",
-      "version": "5.4.4",
-      "purl": "pkg:pypi/tzlocal@5.4.4",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/urllib3@2.7.0",
-      "name": "urllib3",
-      "version": "2.7.0",
-      "purl": "pkg:pypi/urllib3@2.7.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/uvicorn@0.51.0",
-      "name": "uvicorn",
-      "version": "0.51.0",
-      "purl": "pkg:pypi/uvicorn@0.51.0",
-      "properties": [
-        {
-          "name": "statepool:ecosystem",
-          "value": "python"
-        },
-        {
-          "name": "uv:source",
-          "value": "{\"registry\": \"https://pypi.org/simple\"}"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:pypi/yarl@1.24.5",
-      "name": "yarl",
-      "version": "1.24.5",
-      "purl": "pkg:pypi/yarl@1.24.5",
+      "bom-ref": "pkg:pypi/zipp@4.1.0",
+      "name": "zipp",
+      "version": "4.1.0",
+      "purl": "pkg:pypi/zipp@4.1.0",
       "properties": [
         {
           "name": "statepool:ecosystem",
@@ -8204,15 +5799,10 @@
   ],
   "dependencies": [
     {
-      "ref": "pkg:github/123123213weqw/rwkv-agent@codex-statepool-cloud-plugin",
+      "ref": "pkg:github/123123213weqw/statepool-cloud@v0.1.0",
       "dependsOn": [
-        "pkg:cargo/rwkv-agent-cli@0.3.0-beta.2",
-        "pkg:cargo/rwkv-agent-core@0.3.0-beta.2",
-        "pkg:cargo/rwkv-agent-runtime@0.3.0-beta.2",
-        "pkg:cargo/rwkv-agent-server@0.3.0-beta.2",
-        "pkg:cargo/rwkv-state-runtime@0.3.0-beta.2",
-        "pkg:cargo/rwkv-statepool-cloud-plugin@0.3.0-beta.2",
-        "pkg:cargo/rwkv-statepool-plugin-api@0.3.0-beta.2"
+        "pkg:cargo/rwkv-statepool-cloud-plugin@0.1.0",
+        "pkg:cargo/rwkv-statepool-plugin-api@0.1.0"
       ]
     }
   ]

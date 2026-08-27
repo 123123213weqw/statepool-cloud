@@ -1,0 +1,29 @@
+{
+  "A": {
+    "policy": "sticky_warm_worker",
+    "recovery_ready_ms": 0,
+    "second_request_ms": 140.959,
+    "second_plan_ms": 0.0,
+    "worker_replaced": false,
+    "context_verified": true,
+    "content": "CLOUD-A2719"
+  },
+  "B": {
+    "policy": "stateless_direct_recycle",
+    "recovery_ready_ms": 39924.086,
+    "second_request_ms": 594.176,
+    "second_plan_ms": 0.0,
+    "worker_replaced": true,
+    "context_verified": true,
+    "content": "CLOUD-B2719"
+  },
+  "C": {
+    "policy": "statepool_managed_recycle",
+    "recovery_ready_ms": 39085.117,
+    "second_request_ms": 597.921,
+    "second_plan_ms": 0.911,
+    "worker_replaced": true,
+    "context_verified": true,
+    "content": "CLOUD-C2719"
+  }
+}

@@ -1,0 +1,157 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: statepool-vllm
+  namespace: default
+  labels:
+    app.kubernetes.io/name: statepool-vllm
+    app.kubernetes.io/component: gpu-worker
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: statepool-vllm
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: statepool-vllm
+        app.kubernetes.io/component: gpu-worker
+    spec:
+      runtimeClassName: nvidia
+      hostNetwork: true
+      hostIPC: true
+      dnsPolicy: ClusterFirstWithHostNet
+      terminationGracePeriodSeconds: 10
+      containers:
+        - name: vllm
+          image: statepool-vllm-hostenv:0.8.5
+          imagePullPolicy: Never
+          args:
+            - -m
+            - vllm.entrypoints.openai.api_server
+            - --model
+            - /home/data/wangyue/models/qwen/Qwen2.5-0.5B-Instruct-7ae5576
+            - --served-model-name
+            - qwen2.5-0.5b-instruct-vllm
+            - --dtype
+            - half
+            - --max-model-len
+            - "2048"
+            - --gpu-memory-utilization
+            - "0.55"
+            - --host
+            - 127.0.0.1
+            - --port
+            - "18810"
+            - --enforce-eager
+          env:
+            - name: PYTHONPATH
+              value: /home/wzu/.cache/vllm-official-0.8.5.post1/lib/python3.10/site-packages
+            - name: VLLM_USE_V1
+              value: "0"
+            - name: VLLM_ATTENTION_BACKEND
+              value: XFORMERS
+          resources:
+            limits:
+              nvidia.com/gpu: "1"
+            requests:
+              nvidia.com/gpu: "1"
+          startupProbe:
+            httpGet:
+              host: 127.0.0.1
+              port: 18810
+              path: /health
+            failureThreshold: 90
+            periodSeconds: 2
+          readinessProbe:
+            httpGet:
+              host: 127.0.0.1
+              port: 18810
+              path: /health
+            periodSeconds: 2
+          volumeMounts:
+            - name: venv
+              mountPath: /home/wzu/.cache/vllm-official-0.8.5.post1
+              readOnly: true
+            - name: model
+              mountPath: /home/data/wangyue/models/qwen/Qwen2.5-0.5B-Instruct-7ae5576
+              readOnly: true
+        - name: statepool-adapter
+          image: statepool-vllm-hostenv:0.8.5
+          imagePullPolicy: Never
+          args: ["-m", "statepool_cloud.openai_worker"]
+          env:
+            - name: PYTHONPATH
+              value: /opt/statepool/src
+            - name: POD_UID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.uid
+            - name: RWKV_STATEPOOL_URL
+              value: http://127.0.0.1:18130
+            - name: RWKV_WORKER_ENDPOINT
+              value: http://127.0.0.1:18138
+            - name: RWKV_WORKER_ZONE
+              value: cloud
+            - name: RWKV_WORKER_MODEL_ID
+              value: qwen2.5-0.5b-instruct-vllm
+            - name: RWKV_WORKER_MODEL_REVISION
+              value: "7ae557604adf67be50417f59c2c2f167def9a775"
+            - name: RWKV_WORKER_TOKENIZER
+              value: "sha256:c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+            - name: RWKV_WORKER_STATE_ABI
+              value: context-replay.v1
+            - name: RWKV_WORKER_HEARTBEAT_SECONDS
+              value: "1"
+            - name: RWKV_WORKER_DEVICE_VENDOR
+              value: NVIDIA
+            - name: RWKV_WORKER_DEVICE_MODEL
+              value: Tesla V100-PCIE-32GB
+            - name: RWKV_WORKER_DEVICE_RUNTIME
+              value: vLLM-0.8.5.post1+torch-2.6.0+cu124+k3s
+            - name: RWKV_WORKER_DEVICE_MEMORY_BYTES
+              value: "34359738368"
+            - name: RWKV_WORKER_PRICE_CURRENCY
+              value: USD
+            - name: RWKV_WORKER_PRICE_PER_GPU_HOUR
+              value: "1.00"
+            - name: RWKV_OPENAI_UPSTREAM_URL
+              value: http://127.0.0.1:18810
+            - name: RWKV_OPENAI_UPSTREAM_MODEL
+              value: qwen2.5-0.5b-instruct-vllm
+            - name: RWKV_OPENAI_WORKER_HOST
+              value: 127.0.0.1
+            - name: RWKV_OPENAI_WORKER_PORT
+              value: "18138"
+          startupProbe:
+            httpGet:
+              host: 127.0.0.1
+              port: 18138
+              path: /ready
+            failureThreshold: 100
+            periodSeconds: 2
+          readinessProbe:
+            httpGet:
+              host: 127.0.0.1
+              port: 18138
+              path: /ready
+            periodSeconds: 2
+          volumeMounts:
+            - name: statepool-source
+              mountPath: /opt/statepool/src
+              readOnly: true
+      volumes:
+        - name: venv
+          hostPath:
+            path: /home/wzu/.cache/vllm-official-0.8.5.post1
+            type: Directory
+        - name: model
+          hostPath:
+            path: /home/data/wangyue/models/qwen/Qwen2.5-0.5B-Instruct-7ae5576
+            type: Directory
+        - name: statepool-source
+          hostPath:
+            path: /home/wzu/codex-build/statepool-cloud/src
+            type: Directory

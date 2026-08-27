@@ -50,8 +50,10 @@ Worker heartbeat 报 `running_requests=1` 或不报告 dirty State，Drain 只�
 `estimated_decode_seconds` 驱动 1→N；停止负载并完成 Drain 后 N→0。
 
 展示 `bench/artifacts/statepool-keda-kind-20260827/transitions-compact.csv`
-和三个 `prestop-results.json` 结果。明确这是 kind 上的控制面仿真；真实 RTX
-4080 State 恢复证据单独展示，不把两者表述为 GPU Pod 闭环。
+和三个 `prestop-results.json` 结果。明确这是 kind 上的控制面仿真。随后可切到
+`statepool-k3s-vllm-recovery-20260827`，展示 `nvidia.com/gpu: 1`、旧/新 Pod
+和 Worker UID、40.565 秒 Ready 以及 `CLOUD-2719`；这是另一次真实 GPU Pod
+实验，并非 KEDA 驱动的 GPU 0→N。
 
 Grafana 展示 GPU seconds、Local/Cloud、Hot/Warm/Cold、Restore、避免 Prefill、
 State I/O、Lease conflict、分币种 estimated cost。
@@ -67,7 +69,10 @@ State I/O、Lease conflict、分币种 estimated cost。
 当前展示
 `bench/artifacts/statepool-abc-replay-20260827/results.csv` 时，页眉必须写
 “simulation replay”，并同时展示公式、来源 hash 和 `not_measured` 列表；不得
-口播成实测 GPU 利用率。将来只有同拓扑 live 结果才能替换此页。
+口播成实测 GPU 利用率。可在旁边展示 k3s live 单样本：A 二轮 140.959 ms，
+B 冷启 39.924 s/二轮 594.176 ms，C 冷启 39.085 s/二轮 597.921 ms +
+0.911 ms plan。标题必须写 “single sample / executability”，不能替换三次重复、
+P95、成本或 utilization 结果。
 
 ## 7:15–8:00：为什么不是拼装
 

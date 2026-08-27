@@ -85,7 +85,7 @@ deterministic full-path test is complemented by a real RTX 4080
 forced-process-loss run: PostgreSQL/S3 commit, source PID termination, fresh
 exact-compatible Worker process, restore to a new GPU State ID, continuation
 and release all passed. Raw evidence is linked from
-[`evidence/statepool/real-gpu-worker-kill-2026-08-27.md`](../evidence/statepool/real-gpu-worker-kill-2026-08-27.md).
+[`evidence/real-gpu-worker-kill-2026-08-27.md`](../evidence/real-gpu-worker-kill-2026-08-27.md).
 The HF recurrent backend explicitly rejects exact snapshots until its cache
 constructor has an equivalent checked adapter.
 
@@ -98,8 +98,11 @@ contract version. Original RWKV payloads that omit the field retain
 `native_export`; new Workers choose `replay_only`, `affinity_only` or
 `native_export`. The standalone OpenAI-compatible adapter always emits
 `affinity_only`, so API/model support cannot be mistaken for raw KV
-portability. It is conformance-tested with a fake upstream; a live vLLM/model
-run is not yet claimed.
+portability. Fake-upstream conformance remains the protocol regression test.
+An exact vLLM 0.8.5.post1 + Qwen2.5-0.5B + V100 profile has also passed a host
+run and a real k3s GPU Pod replacement run. Recovery replays the full
+transcript through a newly registered Worker; it is not `native_export`,
+`remote_state`, or portable KV evidence.
 
 ## Safe plugin seams
 
@@ -142,7 +145,10 @@ The remaining gaps must be closed rather than hidden:
 - Worker drain is unit-, cross-process- and real-GPU preStop-tested, including
   a rebuildable system root that does not mask dirty user State. A separate
   kind/KEDA control-plane run completed 0→1→3→0 with three protocol-faithful
-  simulated Workers; it remains explicitly separate from the GPU evidence.
+  simulated Workers. A later single-node k3s run allocated one real V100 to a
+  vLLM Pod, force-replaced that Pod and verified transcript replay through a
+  new Worker in 40.565 seconds. This is still not a KEDA-driven GPU 0→N or a
+  cross-node migration claim.
 
 The product must retain the documented transcript-reprefill fallback for
 incompatible or absent durable State. The measured migration claim is limited

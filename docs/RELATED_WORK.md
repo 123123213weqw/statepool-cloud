@@ -59,8 +59,11 @@ KEDA distinguishes the 0↔1 activation phase from HPA-managed 1↔N scaling. Th
 StatePool `ScaledObject` maps bounded pending demand to activation and estimated
 decode backlog to scaling. A kind/Kubernetes 1.34 control-plane run with KEDA
 2.20.1 measured 0→1→3→0 and three safe simulated-Worker preStop results. The
-separate RTX 4080 run validates the real data-plane drain and State recovery;
-the project does not merge these into a false GPU-on-Kubernetes claim.
+separate RTX 4080 run validates native RWKV data-plane drain and State recovery.
+A later single-node k3s run independently validates a real V100 Pod allocation,
+forced Pod replacement and vLLM transcript replay. The project does not merge
+these into a false claim that KEDA-driven GPU 0→N or cross-node State migration
+has already been measured.
 
 ## The unresolved gap
 
@@ -85,7 +88,7 @@ privacy-aware placement.
 |---|---|
 | Optional process boundary, default local behavior unchanged | implemented and regression-tested |
 | Worker registry and explainable placement | implemented in the development plugin |
-| OpenAI-compatible/vLLM Worker adapter | protocol conformance implemented and tested with a fake upstream; live vLLM/model/GPU evidence pending |
+| OpenAI-compatible/vLLM Worker adapter | fake-upstream conformance plus one runtime-verified vLLM 0.8.5.post1 / Qwen2.5-0.5B / V100 profile; remains `affinity_only` |
 | Single-process Lease/fencing/CAS | implemented and remotely tested |
 | Atomic LocalFS snapshot/restore of generic State bytes | implemented and remotely tested |
 | Compose, Helm, KEDA, ServiceMonitor and dashboard configuration | authored and statically validated |
@@ -95,6 +98,8 @@ privacy-aware placement.
 | S3/MinIO Cold State adapter | implemented; MinIO container integration passed |
 | Real GPU preStop safe-drain gate | measured after restore/release; rebuildable system root remained and dirty user State was zero |
 | Measured live-Kubernetes/KEDA 0→1→N→0 | measured on kind with a protocol-faithful, non-GPU Worker simulator; three safe preStop results |
+| Real Kubernetes GPU Pod replacement | measured on single-node k3s with one requested V100; new Pod/Worker ready in 40.565 s and transcript replay verified |
+| Live A/B/C recovery comparison | one measured sample per path on the same k3s Deployment/model/GPU class; proves executability, not P95, utilization or cost |
 
 This table is the release claim boundary; competition material must not promote
 an item from “not implemented/measured” without linked evidence.

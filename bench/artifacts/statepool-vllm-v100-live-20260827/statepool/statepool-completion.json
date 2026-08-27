@@ -1,0 +1,50 @@
+{
+  "plan": {
+    "contract_version": "statepool-execution-plan.v1",
+    "decision_id": "decision-0000000000000001",
+    "request_id": "openai-e437d99779b04a17bff690629669a79e",
+    "mode": "remote",
+    "worker_id": "vllm-v100-01",
+    "worker_zone": "cloud",
+    "endpoint": "http://127.0.0.1:18128",
+    "state_action": "none",
+    "reason_code": "cloud_capacity",
+    "lease_required": false,
+    "estimated_queue_ms": 0.0,
+    "estimated_restore_ms": 0.0,
+    "estimated_cost": {
+      "currency": "USD",
+      "amount": 0.00044444444444444447
+    },
+    "fallback": "local"
+  },
+  "selected_worker_id": "vllm-v100-01",
+  "elapsed_ms": 184.391,
+  "completion": {
+    "id": "chatcmpl-8bf3d9a6d4fc4a42aab8c216f653944b",
+    "object": "chat.completion",
+    "created": 1787844990,
+    "model": "qwen2.5-0.5b-instruct-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "reasoning_content": null,
+          "content": "statepool-vllm-v100-ok",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 43,
+      "total_tokens": 54,
+      "completion_tokens": 11,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null
+  }
+}

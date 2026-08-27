@@ -1,0 +1,340 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    kubectl.kubernetes.io/restartedAt: "2026-08-28T00:10:32+08:00"
+  creationTimestamp: "2026-08-27T16:16:01Z"
+  generateName: statepool-vllm-6d98865c5b-
+  generation: 1
+  labels:
+    app.kubernetes.io/component: gpu-worker
+    app.kubernetes.io/name: statepool-vllm
+    pod-template-hash: 6d98865c5b
+  name: statepool-vllm-6d98865c5b-7vlrf
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: statepool-vllm-6d98865c5b
+    uid: 4af833b5-cb88-48c1-bc5c-ed55c3d39eea
+  resourceVersion: "1954"
+  uid: 1896757b-0b82-49dd-a6f2-162503fecda0
+spec:
+  containers:
+  - args:
+    - -m
+    - vllm.entrypoints.openai.api_server
+    - --model
+    - /home/data/wangyue/models/qwen/Qwen2.5-0.5B-Instruct-7ae5576
+    - --served-model-name
+    - qwen2.5-0.5b-instruct-vllm
+    - --dtype
+    - half
+    - --max-model-len
+    - "2048"
+    - --gpu-memory-utilization
+    - "0.55"
+    - --host
+    - 127.0.0.1
+    - --port
+    - "18810"
+    - --enforce-eager
+    env:
+    - name: PYTHONPATH
+      value: /home/wzu/.cache/vllm-official-0.8.5.post1/lib/python3.10/site-packages
+    - name: VLLM_USE_V1
+      value: "0"
+    - name: VLLM_ATTENTION_BACKEND
+      value: XFORMERS
+    image: statepool-vllm-hostenv:0.8.5
+    imagePullPolicy: Never
+    name: vllm
+    readinessProbe:
+      failureThreshold: 3
+      httpGet:
+        host: 127.0.0.1
+        path: /health
+        port: 18810
+        scheme: HTTP
+      periodSeconds: 2
+      successThreshold: 1
+      timeoutSeconds: 1
+    resources:
+      limits:
+        nvidia.com/gpu: "1"
+      requests:
+        nvidia.com/gpu: "1"
+    startupProbe:
+      failureThreshold: 90
+      httpGet:
+        host: 127.0.0.1
+        path: /health
+        port: 18810
+        scheme: HTTP
+      periodSeconds: 2
+      successThreshold: 1
+      timeoutSeconds: 1
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /home/wzu/.cache/vllm-official-0.8.5.post1
+      name: venv
+      readOnly: true
+    - mountPath: /home/data/wangyue/models/qwen/Qwen2.5-0.5B-Instruct-7ae5576
+      name: model
+      readOnly: true
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-zthqh
+      readOnly: true
+  - args:
+    - -m
+    - statepool_cloud.openai_worker
+    env:
+    - name: PYTHONPATH
+      value: /opt/statepool/src
+    - name: POD_UID
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.uid
+    - name: RWKV_STATEPOOL_URL
+      value: http://127.0.0.1:18130
+    - name: RWKV_WORKER_ENDPOINT
+      value: http://127.0.0.1:18138
+    - name: RWKV_WORKER_ZONE
+      value: cloud
+    - name: RWKV_WORKER_MODEL_ID
+      value: qwen2.5-0.5b-instruct-vllm
+    - name: RWKV_WORKER_MODEL_REVISION
+      value: 7ae557604adf67be50417f59c2c2f167def9a775
+    - name: RWKV_WORKER_TOKENIZER
+      value: sha256:c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539
+    - name: RWKV_WORKER_STATE_ABI
+      value: context-replay.v1
+    - name: RWKV_WORKER_HEARTBEAT_SECONDS
+      value: "1"
+    - name: RWKV_WORKER_DEVICE_VENDOR
+      value: NVIDIA
+    - name: RWKV_WORKER_DEVICE_MODEL
+      value: Tesla V100-PCIE-32GB
+    - name: RWKV_WORKER_DEVICE_RUNTIME
+      value: vLLM-0.8.5.post1+torch-2.6.0+cu124+k3s
+    - name: RWKV_WORKER_DEVICE_MEMORY_BYTES
+      value: "34359738368"
+    - name: RWKV_WORKER_PRICE_CURRENCY
+      value: USD
+    - name: RWKV_WORKER_PRICE_PER_GPU_HOUR
+      value: "1.00"
+    - name: RWKV_OPENAI_UPSTREAM_URL
+      value: http://127.0.0.1:18810
+    - name: RWKV_OPENAI_UPSTREAM_MODEL
+      value: qwen2.5-0.5b-instruct-vllm
+    - name: RWKV_OPENAI_WORKER_HOST
+      value: 127.0.0.1
+    - name: RWKV_OPENAI_WORKER_PORT
+      value: "18138"
+    image: statepool-vllm-hostenv:0.8.5
+    imagePullPolicy: Never
+    name: statepool-adapter
+    readinessProbe:
+      failureThreshold: 3
+      httpGet:
+        host: 127.0.0.1
+        path: /ready
+        port: 18138
+        scheme: HTTP
+      periodSeconds: 2
+      successThreshold: 1
+      timeoutSeconds: 1
+    resources: {}
+    startupProbe:
+      failureThreshold: 100
+      httpGet:
+        host: 127.0.0.1
+        path: /ready
+        port: 18138
+        scheme: HTTP
+      periodSeconds: 2
+      successThreshold: 1
+      timeoutSeconds: 1
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /opt/statepool/src
+      name: statepool-source
+      readOnly: true
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-zthqh
+      readOnly: true
+  dnsPolicy: ClusterFirstWithHostNet
+  enableServiceLinks: true
+  hostIPC: true
+  hostNetwork: true
+  nodeName: wzu-sys-4029gp-trt
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  runtimeClassName: nvidia
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 10
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - hostPath:
+      path: /home/wzu/.cache/vllm-official-0.8.5.post1
+      type: Directory
+    name: venv
+  - hostPath:
+      path: /home/data/wangyue/models/qwen/Qwen2.5-0.5B-Instruct-7ae5576
+      type: Directory
+    name: model
+  - hostPath:
+      path: /home/wzu/codex-build/statepool-cloud/src
+      type: Directory
+    name: statepool-source
+  - name: kube-api-access-zthqh
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  allocatedResources:
+    nvidia.com/gpu: "1"
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2026-08-27T16:16:02Z"
+    observedGeneration: 1
+    status: "True"
+    type: PodReadyToStartContainers
+  - lastProbeTime: null
+    lastTransitionTime: "2026-08-27T16:16:01Z"
+    observedGeneration: 1
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2026-08-27T16:16:40Z"
+    observedGeneration: 1
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2026-08-27T16:16:40Z"
+    observedGeneration: 1
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2026-08-27T16:16:01Z"
+    observedGeneration: 1
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://86d52ee1ca2a6dcb49674b9d6ef62a1c117e9020089b601443797e1060b4292d
+    image: docker.io/library/statepool-vllm-hostenv:0.8.5
+    imageID: sha256:19704d2da39fbb2a7b035b9e9f64572a5a53b70751fb5ab929bdefd3ca186931
+    lastState:
+      terminated:
+        containerID: containerd://176c46881ee10325cbe480538840d585d2e65a9b1f7092421fd8c00c344704c4
+        exitCode: 1
+        finishedAt: "2026-08-27T16:16:03Z"
+        reason: Error
+        startedAt: "2026-08-27T16:16:03Z"
+    name: statepool-adapter
+    ready: true
+    resources: {}
+    restartCount: 1
+    started: true
+    state:
+      running:
+        startedAt: "2026-08-27T16:16:04Z"
+    user:
+      linux:
+        gid: 0
+        supplementalGroups:
+        - 0
+        uid: 0
+    volumeMounts:
+    - mountPath: /opt/statepool/src
+      name: statepool-source
+      readOnly: true
+      recursiveReadOnly: Disabled
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-zthqh
+      readOnly: true
+      recursiveReadOnly: Disabled
+  - allocatedResources:
+      nvidia.com/gpu: "1"
+    allocatedResourcesStatus:
+    - name: nvidia.com/gpu
+      resources:
+      - health: Healthy
+        resourceID: GPU-18fbf081-3c6d-d65b-11b8-288a4ce1ab28
+    containerID: containerd://389e86e07f47996e53e20a84cb1aba2836cef0cd48cc07b03b2451d17b54d25d
+    image: docker.io/library/statepool-vllm-hostenv:0.8.5
+    imageID: sha256:19704d2da39fbb2a7b035b9e9f64572a5a53b70751fb5ab929bdefd3ca186931
+    lastState: {}
+    name: vllm
+    ready: true
+    resources:
+      limits:
+        nvidia.com/gpu: "1"
+      requests:
+        nvidia.com/gpu: "1"
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2026-08-27T16:16:02Z"
+    user:
+      linux:
+        gid: 0
+        supplementalGroups:
+        - 0
+        uid: 0
+    volumeMounts:
+    - mountPath: /home/wzu/.cache/vllm-official-0.8.5.post1
+      name: venv
+      readOnly: true
+      recursiveReadOnly: Disabled
+    - mountPath: /home/data/wangyue/models/qwen/Qwen2.5-0.5B-Instruct-7ae5576
+      name: model
+      readOnly: true
+      recursiveReadOnly: Disabled
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-zthqh
+      readOnly: true
+      recursiveReadOnly: Disabled
+  hostIP: 10.132.218.11
+  hostIPs:
+  - ip: 10.132.218.11
+  observedGeneration: 1
+  phase: Running
+  podIP: 10.132.218.11
+  podIPs:
+  - ip: 10.132.218.11
+  qosClass: BestEffort
+  resources: {}
+  startTime: "2026-08-27T16:16:01Z"

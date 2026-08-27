@@ -266,7 +266,7 @@ The remaining recovery gap is Controller restart: durable bytes and metadata
 survive in PostgreSQL/S3, but the Controller-side current `StateReference`
 index is not yet reconstructed at startup. Exact Albatross GPU bytes have
 passed one S3 forced-Worker-process-loss experiment on an RTX 4080; see
-[`evidence/statepool/real-gpu-worker-kill-2026-08-27.md`](../evidence/statepool/real-gpu-worker-kill-2026-08-27.md).
+[`evidence/real-gpu-worker-kill-2026-08-27.md`](../evidence/real-gpu-worker-kill-2026-08-27.md).
 The HF recurrent backend still fails closed for exact snapshot/restore.
 
 ## OpenAI-compatible/vLLM Worker adapter
@@ -324,3 +324,11 @@ archived in
 The evidence-backed A/B/C capacity simulation, including formulae and explicit
 non-measurements, is under
 [`bench/artifacts/statepool-abc-replay-20260827/`](../bench/artifacts/statepool-abc-replay-20260827/README.md).
+
+The exact vLLM 0.8.5.post1 / Qwen2.5-0.5B / V100 host profile is archived in
+[`bench/artifacts/statepool-vllm-v100-live-20260827/`](../bench/artifacts/statepool-vllm-v100-live-20260827/README.md).
+The single-node k3s V100 Pod replacement and live A/B/C single-sample run are in
+[`bench/artifacts/statepool-k3s-vllm-recovery-20260827/`](../bench/artifacts/statepool-k3s-vllm-recovery-20260827/README.md).
+These Transformer results use full transcript replay and remain
+`affinity_only`; they do not demonstrate portable KV cache, KEDA-driven GPU
+0→N, cross-node recovery, or production latency distributions.

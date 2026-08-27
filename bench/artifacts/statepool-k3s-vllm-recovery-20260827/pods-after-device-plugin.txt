@@ -1,0 +1,6 @@
+NAMESPACE     NAME                                      READY   STATUS              RESTARTS   AGE     IP           NODE                 NOMINATED NODE   READINESS GATES
+default       gpu-smoke                                 0/1     Completed           0          71s     10.42.0.15   wzu-sys-4029gp-trt   <none>           <none>
+kube-system   coredns-54996dc9b4-wlb46                  0/1     ImagePullBackOff    0          4m41s   10.42.0.13   wzu-sys-4029gp-trt   <none>           <none>
+kube-system   local-path-provisioner-58d557dc48-vxjx9   0/1     ImagePullBackOff    0          4m41s   10.42.0.14   wzu-sys-4029gp-trt   <none>           <none>
+kube-system   metrics-server-6dc596dfb8-v7r4b           0/1     ContainerCreating   0          4m39s   <none>       wzu-sys-4029gp-trt   <none>           <none>
+kube-system   nvidia-device-plugin-daemonset-hnb56      1/1     Running             0          4s      10.42.0.17   wzu-sys-4029gp-trt   <none>           <none>

@@ -20,7 +20,8 @@ Prometheus 和 Grafana。
 - `native_export`、`affinity_only`、`replay_only` 三种能力模式；
 - 独立 OpenAI/vLLM Worker Adapter；
 - Compose、Helm、KEDA、Prometheus、Grafana 与 FinOps 回放；
-- RWKV Worker 故障恢复和 Kubernetes 弹性证据。
+- RWKV Worker 故障恢复、Kubernetes 弹性与真实 GPU Pod 证据；
+- Qwen2.5-0.5B + vLLM 0.8.5.post1 + V100 的固定版本运行档案。
 
 ## 仓库边界
 
@@ -37,7 +38,7 @@ Prometheus 和 Grafana。
 
 ```bash
 docker compose -f deploy/statepool/compose.yaml up --build statepool
-curl --fail http://127.0.0.1:8130/health
+curl --fail http://127.0.0.1:8130/plugin/v1/health
 ```
 
 接入现有 OpenAI-compatible 服务：
@@ -57,6 +58,15 @@ statepool-openai-worker
 完整部署说明见 [`deploy/statepool/README.md`](deploy/statepool/README.md)，
 协议见 [`contracts/statepool-plugin-v1.openapi.json`](contracts/statepool-plugin-v1.openapi.json)，
 验证边界见 [`competition/evidence-register.md`](competition/evidence-register.md)。
+
+真实运行证据：
+
+- [`vLLM / Qwen2.5 / V100 host 集成`](bench/artifacts/statepool-vllm-v100-live-20260827/README.md)；
+- [`k3s GPU Pod 强制替换与 live A/B/C`](bench/artifacts/statepool-k3s-vllm-recovery-20260827/README.md)。
+
+该 Transformer 路线固定声明为 `affinity_only`：恢复使用完整 transcript replay，
+不宣称 StatePool 可导出或跨 Worker 迁移 vLLM KV cache。live A/B/C 当前每方案
+仅一个样本，不能当作 P95、吞吐或生产 GPU 利用率结论。
 
 ## 开发验证
 
@@ -79,4 +89,3 @@ Rust 编译和测试由 CI 或远程构建机完成。
 - 路线图：[`ROADMAP.md`](ROADMAP.md)
 - 维护者：[`MAINTAINERS.md`](MAINTAINERS.md)
 - 第三方依赖：[`third_party/NOTICE.md`](third_party/NOTICE.md)
-

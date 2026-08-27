@@ -81,5 +81,15 @@ own operator's lifecycle policy.
 
 The checked-in tests use a protocol-faithful fake HTTP upstream and prove
 registration, health gating, model rewrite, proxy response, affinity header
-and drain rejection. A live vLLM/model/GPU run is still required before a
-specific model profile becomes `runtime_verified`.
+and drain rejection. One exact profile is additionally runtime-verified:
+vLLM 0.8.5.post1, Transformers 4.51.3, Qwen2.5-0.5B-Instruct revision
+`7ae557604adf67be50417f59c2c2f167def9a775`, tokenizer SHA-256
+`c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539`,
+and NVIDIA V100. Host integration evidence is archived under
+[`statepool-vllm-v100-live-20260827`](../bench/artifacts/statepool-vllm-v100-live-20260827/README.md);
+the real k3s GPU Pod replacement and transcript replay are under
+[`statepool-k3s-vllm-recovery-20260827`](../bench/artifacts/statepool-k3s-vllm-recovery-20260827/README.md).
+
+This runtime verification does not change the capability: it remains
+`affinity_only`, uses full transcript replay after Worker replacement, and
+does not prove portable KV cache, native State export, P95, or production SLO.

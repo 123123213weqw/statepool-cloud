@@ -1,0 +1,204 @@
+{
+  "schema_version": "statepool-evidence-manifest.v1",
+  "classification": "live_same_node_gpu_kubernetes_recovery",
+  "captured_at_start": "2026-08-27T23:45:00+08:00",
+  "captured_at_cleanup": "2026-08-28T00:18:57+08:00",
+  "source_repository": "https://github.com/123123213weqw/statepool-cloud",
+  "source_git_commit": "71ee1d1a13c04da28e897e2c4645c1e1697f0513",
+  "source_dirty": false,
+  "kubernetes": {
+    "distribution": "k3s",
+    "version": "v1.36.3+k3s1",
+    "node_count": 1,
+    "runtime_class": "nvidia",
+    "gpu_resource_capacity": 2,
+    "device_plugin": "v0.19.3"
+  },
+  "hardware": {
+    "node": "wzu-SYS-4029GP-TRT",
+    "gpu_class": "Tesla V100-PCIE-32GB",
+    "driver": "580.173.02",
+    "pod_gpu_request": "nvidia.com/gpu=1"
+  },
+  "runtime": {
+    "node": "wzu-SYS-4029GP-TRT",
+    "kubernetes": "k3s v1.36.3+k3s1",
+    "gpu_class": "Tesla V100-PCIE-32GB",
+    "gpu_resource_request": "nvidia.com/gpu=1",
+    "runtime": "vLLM 0.8.5.post1 / torch 2.6.0+cu124 / XFormers",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "forced_replacement": {
+    "recovery_ready_ms": 40565,
+    "worker_replaced": true,
+    "transcript_replay_verified": true
+  },
+  "live_abc": {
+    "A": {
+      "policy": "sticky_warm_worker",
+      "first_pod": "statepool-vllm-6d98865c5b-8kg4c",
+      "first_pod_uid": "0b77a79a-976f-43c8-afbc-7d4048b359bb",
+      "replacement_pod": "statepool-vllm-6d98865c5b-8kg4c",
+      "replacement_pod_uid": "0b77a79a-976f-43c8-afbc-7d4048b359bb",
+      "worker_replaced": false,
+      "idle_window_seconds": 10,
+      "recovery_ready_ms": 0,
+      "observed_allocated_gap_ms": 10150.552,
+      "first": {
+        "request_ms": 607.557,
+        "plan_ms": 0.0,
+        "worker_id": "0b77a79a-976f-43c8-afbc-7d4048b359bb",
+        "content": "stored",
+        "usage": {
+          "prompt_tokens": 47,
+          "total_tokens": 49,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null
+        },
+        "plan": null
+      },
+      "second": {
+        "request_ms": 140.959,
+        "plan_ms": 0.0,
+        "worker_id": "0b77a79a-976f-43c8-afbc-7d4048b359bb",
+        "content": "CLOUD-A2719",
+        "usage": {
+          "prompt_tokens": 78,
+          "total_tokens": 86,
+          "completion_tokens": 8,
+          "prompt_tokens_details": null
+        },
+        "plan": null
+      },
+      "context_verified": true
+    },
+    "B": {
+      "policy": "stateless_direct_recycle",
+      "first_pod": "statepool-vllm-6d98865c5b-8kg4c",
+      "first_pod_uid": "0b77a79a-976f-43c8-afbc-7d4048b359bb",
+      "replacement_pod": "statepool-vllm-6d98865c5b-27g95",
+      "replacement_pod_uid": "2b5ed569-c77d-41a5-83af-2a4a1b7282ab",
+      "worker_replaced": true,
+      "idle_window_seconds": 0,
+      "recovery_ready_ms": 39924.086,
+      "observed_allocated_gap_ms": 40649.992,
+      "first": {
+        "request_ms": 55.033,
+        "plan_ms": 0.0,
+        "worker_id": "0b77a79a-976f-43c8-afbc-7d4048b359bb",
+        "content": "stored",
+        "usage": {
+          "prompt_tokens": 47,
+          "total_tokens": 49,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null
+        },
+        "plan": null
+      },
+      "second": {
+        "request_ms": 594.176,
+        "plan_ms": 0.0,
+        "worker_id": "2b5ed569-c77d-41a5-83af-2a4a1b7282ab",
+        "content": "CLOUD-B2719",
+        "usage": {
+          "prompt_tokens": 78,
+          "total_tokens": 86,
+          "completion_tokens": 8,
+          "prompt_tokens_details": null
+        },
+        "plan": null
+      },
+      "context_verified": true
+    },
+    "C": {
+      "policy": "statepool_managed_recycle",
+      "first_pod": "statepool-vllm-6d98865c5b-27g95",
+      "first_pod_uid": "2b5ed569-c77d-41a5-83af-2a4a1b7282ab",
+      "replacement_pod": "statepool-vllm-6d98865c5b-7vlrf",
+      "replacement_pod_uid": "1896757b-0b82-49dd-a6f2-162503fecda0",
+      "worker_replaced": true,
+      "idle_window_seconds": 0,
+      "recovery_ready_ms": 39085.117,
+      "observed_allocated_gap_ms": 39814.109,
+      "first": {
+        "request_ms": 59.151,
+        "plan_ms": 1.081,
+        "worker_id": "2b5ed569-c77d-41a5-83af-2a4a1b7282ab",
+        "content": "stored",
+        "usage": {
+          "prompt_tokens": 47,
+          "total_tokens": 49,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null
+        },
+        "plan": {
+          "contract_version": "statepool-execution-plan.v1",
+          "decision_id": "decision-0000000000000003",
+          "request_id": "abc-14a370b515ae4e999b6d83c511235841",
+          "mode": "remote",
+          "worker_id": "2b5ed569-c77d-41a5-83af-2a4a1b7282ab",
+          "worker_zone": "cloud",
+          "endpoint": "http://127.0.0.1:18138",
+          "state_action": "none",
+          "reason_code": "cloud_capacity",
+          "lease_required": false,
+          "estimated_queue_ms": 0.0,
+          "estimated_restore_ms": 0.0,
+          "estimated_cost": {
+            "currency": "USD",
+            "amount": 0.00022222222222222223
+          },
+          "fallback": "local"
+        }
+      },
+      "second": {
+        "request_ms": 597.921,
+        "plan_ms": 0.911,
+        "worker_id": "1896757b-0b82-49dd-a6f2-162503fecda0",
+        "content": "CLOUD-C2719",
+        "usage": {
+          "prompt_tokens": 78,
+          "total_tokens": 86,
+          "completion_tokens": 8,
+          "prompt_tokens_details": null
+        },
+        "plan": {
+          "contract_version": "statepool-execution-plan.v1",
+          "decision_id": "decision-0000000000000004",
+          "request_id": "abc-3eea69eba74c403aba4a185d4629ef7b",
+          "mode": "remote",
+          "worker_id": "1896757b-0b82-49dd-a6f2-162503fecda0",
+          "worker_zone": "cloud",
+          "endpoint": "http://127.0.0.1:18138",
+          "state_action": "none",
+          "reason_code": "cloud_capacity",
+          "lease_required": false,
+          "estimated_queue_ms": 0.0,
+          "estimated_restore_ms": 0.0,
+          "estimated_cost": {
+            "currency": "USD",
+            "amount": 0.00022222222222222223
+          },
+          "fallback": "local"
+        }
+      },
+      "context_verified": true
+    }
+  },
+  "all_context_checks_passed": true,
+  "measured_break_even_idle_seconds": 39.924,
+  "cleanup": {
+    "deployment_removed": true,
+    "k3s_uninstalled": true,
+    "final_gpu_processes": 0
+  },
+  "not_measured": [
+    "KEDA 0-to-N GPU scaling",
+    "cross-node migration",
+    "production latency percentiles",
+    "average GPU utilization",
+    "portable Transformer KV snapshot/restore",
+    "cloud billing"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "statepool-evidence-manifest.v1",
+  "classification": "live_single_node_gpu_integration",
+  "captured_at": "2026-08-27T23:36:18+08:00",
+  "source_repository": "https://github.com/123123213weqw/statepool-cloud",
+  "source_git_commit": "71ee1d1a13c04da28e897e2c4645c1e1697f0513",
+  "source_dirty": false,
+  "hardware": {
+    "host": "wzu-SYS-4029GP-TRT",
+    "gpus": "2x Tesla V100-PCIE-32GB",
+    "driver": "580.173.02",
+    "gpu_used": 1
+  },
+  "runtime": {
+    "vllm": "0.8.5.post1",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.51.3",
+    "attention_backend": "XFormers",
+    "engine": "V0"
+  },
+  "model": {
+    "id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "logical_model_id": "qwen2.5-0.5b-instruct-vllm",
+    "state_abi": "context-replay.v1",
+    "state_capability": "affinity_only"
+  },
+  "results": {
+    "direct_requests": 3,
+    "direct_elapsed_ms": [
+      645,
+      192,
+      191
+    ],
+    "direct_sentinel_passes": 3,
+    "statepool_elapsed_ms": 184.391,
+    "statepool_plan_mode": "remote",
+    "statepool_selected_worker": "vllm-v100-01",
+    "statepool_sentinel": "statepool-vllm-v100-ok"
+  },
+  "not_measured": [
+    "throughput under concurrency",
+    "production latency percentiles",
+    "portable Transformer KV snapshot/restore",
+    "multi-node behavior",
+    "cloud billing"
+  ]
+}

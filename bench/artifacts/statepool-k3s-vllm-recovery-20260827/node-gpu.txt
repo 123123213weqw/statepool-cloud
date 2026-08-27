@@ -1,0 +1,2 @@
+NAME                 GPU_CAP   GPU_ALLOC
+wzu-sys-4029gp-trt   2         2

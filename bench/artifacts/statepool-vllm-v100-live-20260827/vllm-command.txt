@@ -1,0 +1,1 @@
+/home/wzu/.cache/vllm-official-0.8.5.post1/bin/python -m vllm.entrypoints.openai.api_server --model /home/data/wangyue/models/qwen/Qwen2.5-0.5B-Instruct-7ae5576 --served-model-name qwen2.5-0.5b-instruct-vllm --dtype half --max-model-len 2048 --gpu-memory-utilization 0.55 --host 127.0.0.1 --port 18800 --enforce-eager 

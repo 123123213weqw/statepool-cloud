@@ -1,0 +1,10 @@
+captured_at=2026-08-27T23:36:18+08:00
+hostname=wzu-SYS-4029GP-TRT
+Tesla V100-PCIE-32GB, GPU-18fbf081-3c6d-d65b-11b8-288a4ce1ab28, 32768 MiB, 580.173.02
+Tesla V100-PCIE-32GB, GPU-f65db2e8-87bb-c88d-363f-23c79f793548, 32768 MiB, 580.173.02
+INFO 08-27 23:36:22 [__init__.py:239] Automatically detected platform cuda.
+python_vllm=0.8.5.post1
+python_torch=2.6.0+cu124
+python_transformers=4.51.3
+torch_cuda=12.4
+torch_arches=sm_50,sm_60,sm_70,sm_75,sm_80,sm_86,sm_90

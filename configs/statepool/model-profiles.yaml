@@ -22,6 +22,18 @@ profiles:
     state_capability: affinity_only
     evidence_status: adapter_conformance_verified_real_model_runtime_pending
 
+  - id: qwen25-0.5b-vllm-v100-verified
+    api_protocol: openai-compatible
+    upstream_engine: vllm-0.8.5.post1
+    model_ref:
+      model_id: qwen2.5-0.5b-instruct-vllm
+      revision: 7ae557604adf67be50417f59c2c2f167def9a775
+      tokenizer: sha256:c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539
+      state_abi: context-replay.v1
+    upstream_model: Qwen/Qwen2.5-0.5B-Instruct
+    state_capability: affinity_only
+    evidence_status: runtime_verified_v100_and_single_node_k3s_pod_recovery
+
   - id: generic-openai-replay-template
     api_protocol: openai-compatible
     upstream_engine: operator-supplied

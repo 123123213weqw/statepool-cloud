@@ -85,9 +85,26 @@ bench/artifacts/statepool-<date>-<hardware>/
 
 ## 当前可用的仿真回放
 
-[`bench/artifacts/statepool-abc-replay-20260827/`](../../bench/artifacts/statepool-abc-replay-20260827/README.md)
+[`bench/artifacts/statepool-abc-replay-20260827/`](../bench/artifacts/statepool-abc-replay-20260827/README.md)
 把 100 Session、两段 60 秒活跃和 300 秒空闲固定为同一 trace，并引用真实
 KEDA 时间、RTX 4080 State 大小/单次本地 snapshot/restore 和 100 Session
 contract correctness。它输出 `simulation_replay`，不能替代本协议要求的
 same-topology 三次 live GPU 实验；其作用是让比赛叙事中的成本公式先可审计、
 可改参数、可复算，而不是填造尚未采集的 GPU utilization 或 restore P95。
+
+## 当前 live 单样本（不替代正式协议）
+
+[`bench/artifacts/statepool-k3s-vllm-recovery-20260827/`](../bench/artifacts/statepool-k3s-vllm-recovery-20260827/README.md)
+固定同一 k3s Deployment、Qwen2.5 immutable revision、vLLM 版本和 V100 级别，
+对三条路径各运行一个样本：
+
+| 路径 | cold ready | turn-2 latency |
+|---|---:|---:|
+| A Sticky warm | 不回收 | 140.959 ms |
+| B Stateless recycle | 39,924.086 ms | 594.176 ms |
+| C StatePool managed recycle | 39,085.117 ms | 597.921 ms + 0.911 ms plan |
+
+三个输出分别为 `CLOUD-A2719`、`CLOUD-B2719`、`CLOUD-C2719`，B/C 的 Worker
+UID 均发生替换。该证据证明三条路径能在真实 GPU Pod 上部署与恢复；只有一个
+样本/方案，未采集正式协议要求的三次重复、P95、DCGM utilization、吞吐和账单，
+也没有 KEDA 驱动 GPU 0→N，故不得用于这些结论。

@@ -1,0 +1,55 @@
+I0827 15:49:41.729350       1 main.go:247] "Starting NVIDIA Device Plugin" version=<
+	570e776d-amd64
+	commit: 570e776d6813cb9f3e9c8c105cf8d79989db6650
+ >
+I0827 15:49:41.729425       1 main.go:250] Starting FS watcher for /var/lib/kubelet/device-plugins
+I0827 15:49:41.729478       1 main.go:257] Starting OS watcher.
+I0827 15:49:41.729685       1 main.go:272] Starting Plugins.
+I0827 15:49:41.729725       1 main.go:329] Loading configuration.
+I0827 15:49:41.730785       1 main.go:355] Updating config with default resource matching patterns.
+I0827 15:49:41.731035       1 main.go:366] 
+Running with config:
+{
+  "version": "v1",
+  "flags": {
+    "migStrategy": "none",
+    "failOnInitError": true,
+    "mpsRoot": "",
+    "nvidiaDriverRoot": "/",
+    "nvidiaDevRoot": "/",
+    "gdrcopyEnabled": false,
+    "gdsEnabled": false,
+    "mofedEnabled": false,
+    "useNodeFeatureAPI": null,
+    "deviceDiscoveryStrategy": "auto",
+    "plugin": {
+      "passDeviceSpecs": false,
+      "deviceListStrategy": [
+        "envvar"
+      ],
+      "deviceIDStrategy": "uuid",
+      "cdiAnnotationPrefix": "cdi.k8s.io/",
+      "nvidiaCTKPath": "/usr/bin/nvidia-ctk",
+      "containerDriverRoot": "/driver-root"
+    }
+  },
+  "resources": {
+    "gpus": [
+      {
+        "pattern": "*",
+        "name": "nvidia.com/gpu"
+      }
+    ]
+  },
+  "sharing": {
+    "timeSlicing": {}
+  },
+  "imex": {}
+}
+I0827 15:49:41.731044       1 main.go:369] Retrieving plugins.
+I0827 15:49:41.756252       1 plugin-manager.go:100] Detected platform: nvml
+I0827 15:49:41.756317       1 plugin-manager.go:50] Using device discovery strategy: nvml
+I0827 15:49:41.772245       1 server.go:198] Starting GRPC server for 'nvidia.com/gpu'
+I0827 15:49:41.773105       1 server.go:142] Starting to serve 'nvidia.com/gpu' on /var/lib/kubelet/device-plugins/nvidia-gpu.sock
+I0827 15:49:41.777656       1 server.go:149] Registered device plugin for 'nvidia.com/gpu' with Kubelet
+I0827 15:49:41.781993       1 health.go:64] Ignoring the following XIDs for health checks: map[13:true 31:true 43:true 45:true 68:true 109:true]

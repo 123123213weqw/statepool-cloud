@@ -1,0 +1,2 @@
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+pod "statepool-vllm-d5449cdd6-rprsd" force deleted from default namespace

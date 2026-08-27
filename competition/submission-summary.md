@@ -66,8 +66,16 @@ State I/O 和估算费用，并在每行标记 `simulation_replay`。按公开�
 live 100 Session GPU benchmark，后续可用同协议实测替换。
 
 独立 `rwkv-openai-worker` 已完成 fake-upstream 协议闭环、健康门、模型名映射、
-StatePool 心跳、affinity header 和安全排空；vLLM 与候选 Qwen3.5 模型尚未做
-真实 GPU 运行，因此只算 Adapter 落地，不算模型认证数据。
+StatePool 心跳、affinity header 和安全排空。另有一个固定运行档案：vLLM
+0.8.5.post1、Qwen2.5-0.5B immutable revision 与 V100 已在 host 和单节点 k3s
+GPU Pod 中运行；强制删 Pod 后 40.565 秒恢复 Ready，新 Worker 重放完整
+transcript 得到正确结果。它严格属于 `affinity_only`，不算 KV 迁移认证。
+
+同一 k3s Deployment、模型和 V100 级别还完成了 live A/B/C 单样本：Sticky
+二轮 140.959 ms；Stateless recycle 冷启动 39.924 s、二轮 594.176 ms；
+StatePool managed recycle 冷启动 39.085 s、二轮 597.921 ms，另加 0.911 ms
+Placement plan。该组数据只证明路径可部署、可恢复、可测试，不替代三次重复、
+P95、吞吐、GPU utilization 或真实账单实验。
 
 ## 开源治理（20%）
 
@@ -81,13 +89,16 @@ StatePool 心跳、affinity header 和安全排空；vLLM 与候选 Qwen3.5 模�
 
 维护对象限定为 State/session contract、Placement、Lifecycle、FinOps 和适配器
 接口，而非维护 Kubernetes/KEDA/HAMi/AIBrix Fork。Roadmap 以证据门槛推进：
-LocalFS 单进程 → PostgreSQL/S3 Cloud Lite → vLLM 候选模型实测 → 真实 KEDA
-GPU 闭环 → 可选 AIBrix/HAMi 集成。
+LocalFS 单进程 → PostgreSQL/S3 Cloud Lite → 固定 vLLM/Qwen2.5/V100 实测 →
+单节点真实 GPU Pod 恢复（均已完成）→ KEDA 驱动真实 GPU 0→N、多节点重复实验
+→ 可选 AIBrix/HAMi 集成。
 
 ## 当前诚实边界
 
 已经实现不等于可以扩大结论。PostgreSQL Lease/CAS、S3 adapter、RTX 4080
-Worker 进程强杀恢复和 kind/KEDA 0→1→3→0 都有原始证据，但两次实验不是同一
-拓扑：GPU 实验是同一物理卡上的 sequential fresh process；Kubernetes 实验是
-非 GPU 协议 Worker 仿真。答辩不得把它们拼成“GPU Pod 跨节点迁移”，也不得
-把异常 SSH 隧道下的 S3 时延写成生产 SLO。
+Worker 进程强杀恢复、kind/KEDA 0→1→3→0、单节点 k3s V100 Pod 替换均有原始
+证据，但用途不同：RWKV GPU 实验是同一物理卡 sequential fresh process；
+kind/KEDA 是非 GPU 协议 Worker 仿真；k3s 实验是真 GPU Pod，但未由 KEDA
+触发、未跨节点，Transformer 恢复靠 transcript replay。答辩不得把它们拼成
+“KEDA GPU 跨节点 State/KV 迁移”，也不得把单样本或 SSH 隧道下的 S3 时延
+写成生产 SLO。

@@ -203,6 +203,33 @@ StatePool 相比 Sticky 减少 45.151% modeled GPU-hours，相比 Stateless 避�
 透明的 `simulation_replay`，不是 live GPU utilization benchmark；Stateless
 Prefill 的 GPU 时间未知，因此没有被虚构进成本优势。
 
+### 7.5 vLLM / Qwen2.5 / V100（host 实测）
+
+服务器固定 vLLM 0.8.5.post1、Transformers 4.51.3、Qwen2.5-0.5B-Instruct
+revision `7ae557604adf67be50417f59c2c2f167def9a775` 与 tokenizer SHA-256，
+完成三次直接 vLLM completion；再经 StatePool plan 选择 Worker
+`vllm-v100-01`，得到 `statepool-vllm-v100-ok`，completion 184.391 ms。
+该路径的 State capability 为 `affinity_only`，恢复依赖完整 transcript replay，
+不宣称导出或迁移 vLLM KV cache。
+
+### 7.6 k3s 真实 GPU Pod 与 live A/B/C（单样本）
+
+单节点 k3s 1.36.3+k3s1 与 NVIDIA device plugin 0.19.3 将两张 V100 暴露为
+`nvidia.com/gpu`；测试 Deployment 对 Pod request/limit 一张 GPU。强制删除
+旧 Pod 后，新 Pod 与 adapter 在 40.565 秒 Ready，Worker UID 发生变化，完整
+transcript 经新 Worker 输出 `CLOUD-2719`。
+
+同一 Deployment、模型与 GPU 级别各测一个样本：
+
+| 路径 | cold ready | turn-2 | 结果 |
+|---|---:|---:|---|
+| A Sticky warm | 无 recycle | 140.959 ms | `CLOUD-A2719` |
+| B Stateless recycle | 39.924 s | 594.176 ms | `CLOUD-B2719` |
+| C StatePool managed recycle | 39.085 s | 597.921 ms + 0.911 ms plan | `CLOUD-C2719` |
+
+这组 live 数据验证真实 GPU Pod 的部署和恢复路径，不满足评测协议中的三次重复，
+因此不作为 P95、吞吐、GPU utilization、成本或 KEDA GPU 0→N 结论。
+
 ## 8. 开源治理与长期维护
 
 主仓库采用 MIT；第三方许可证和接入形态进入
@@ -216,10 +243,10 @@ contract、Placement、Lifecycle、FinOps 和薄 Adapter；上游系统独立升
 
 ## 9. 当前边界与下一步
 
-当前仍不宣称：跨模型原始 State 迁移、真实 GPU Kubernetes 0→1→N→0、生产
-级多租户认证、Controller restart 自动重建 StateReference 索引、生产 restore
-P95、同拓扑 live A/B/C GPU utilization。下一步优先把已经独立验证的数据面和
-控制面装入一个发布 GPU Worker 镜像，而不是扩展更多上游 Fork。
+当前仍不宣称：跨模型原始 State/KV 迁移、KEDA 驱动真实 GPU 0→1→N→0、
+跨节点恢复、生产级多租户认证、Controller restart 自动重建 StateReference
+索引、生产 restore P95，以及多次 live A/B/C 的 GPU utilization/成本结论。
+下一步优先做真实 KEDA GPU、多节点与重复统计，而不是扩展更多上游 Fork。
 
 ## 结论
 

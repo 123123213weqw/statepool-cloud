@@ -1,0 +1,2 @@
+NAME                 STATUS   ROLES           AGE   VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION              CONTAINER-RUNTIME
+wzu-sys-4029gp-trt   Ready    control-plane   7s    v1.36.3+k3s1   10.132.218.11   <none>        Ubuntu 22.04.5 LTS   6.8.0-136-generic (amd64)   containerd://2.3.2-k3s2

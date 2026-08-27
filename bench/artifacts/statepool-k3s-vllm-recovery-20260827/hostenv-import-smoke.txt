@@ -1,0 +1,2 @@
+INFO 08-27 16:00:43 [__init__.py:239] Automatically detected platform cuda.
+0.8.5.post1 2.6.0+cu124 4.51.3 Tesla V100-PCIE-32GB

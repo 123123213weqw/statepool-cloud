@@ -1,0 +1,141 @@
+cleanup_started=2026-08-28T00:18:48+08:00
+deployment.apps "statepool-vllm" deleted from default namespace
+pod "gpu-smoke" deleted from default namespace
+daemonset.apps "nvidia-device-plugin-daemonset" deleted from kube-system namespace
+--- remaining project processes ---
+124119 /usr/bin/python3.10 -m statepool_cloud.openai_worker
+--- GPU processes before k3s uninstall ---
+--- uninstall k3s ---
+++ id -u
++ '[' 0 -eq 0 ']'
++ K3S_DATA_DIR=/var/lib/rancher/k3s
++ /usr/local/bin/k3s-killall.sh
++ for service in /etc/systemd/system/k3s*.service
++ '[' -s /etc/systemd/system/k3s.service ']'
+++ basename /etc/systemd/system/k3s.service
++ systemctl stop k3s.service
++ for service in /etc/init.d/k3s*
++ '[' -x '/etc/init.d/k3s*' ']'
++ killtree 123457 4134790 4136489 4142576
++ kill -9 123457 123486 124119 4134790 4134813 4136489 4136575 4142576 4142655
++ do_unmount_and_remove /run/k3s
++ set +x
+sh -c 'umount -f "$0" && rm -rf "$0"' /run/k3s/containerd/io.containerd.runtime.v2.task/k8s.io/ee2e2a9454ac4cf42b37b235cd81925d5b86e43602ebf58f5d01a995d1384086/rootfs
+sh -c 'umount -f "$0" && rm -rf "$0"' /run/k3s/containerd/io.containerd.runtime.v2.task/k8s.io/86d52ee1ca2a6dcb49674b9d6ef62a1c117e9020089b601443797e1060b4292d/rootfs
+sh -c 'umount -f "$0" && rm -rf "$0"' /run/k3s/containerd/io.containerd.runtime.v2.task/k8s.io/17b5a1cad675bdfc38de9ea8c27521b67ab643bf88cd6352019d2fa84083126c/rootfs
+sh -c 'umount -f "$0" && rm -rf "$0"' /run/k3s/containerd/io.containerd.runtime.v2.task/k8s.io/03ff5701a2e36a8be254d30df51a8e631082bdba0d373463bfc6e4df2e24a9b1/rootfs
+sh -c 'umount -f "$0" && rm -rf "$0"' /run/k3s/containerd/io.containerd.runtime.v2.task/k8s.io/02886465c5e762198d039a314d4d873fb8cb3086093598a52f8c116ba4517fa4/rootfs
+sh -c 'umount -f "$0" && rm -rf "$0"' /run/k3s/containerd/io.containerd.grpc.v1.cri/sandboxes/ee2e2a9454ac4cf42b37b235cd81925d5b86e43602ebf58f5d01a995d1384086/shm
+sh -c 'umount -f "$0" && rm -rf "$0"' /run/k3s/containerd/io.containerd.grpc.v1.cri/sandboxes/03ff5701a2e36a8be254d30df51a8e631082bdba0d373463bfc6e4df2e24a9b1/shm
+sh -c 'umount -f "$0" && rm -rf "$0"' /run/k3s/containerd/io.containerd.grpc.v1.cri/sandboxes/02886465c5e762198d039a314d4d873fb8cb3086093598a52f8c116ba4517fa4/shm
++ do_unmount_and_remove /var/lib/kubelet/pods
++ set +x
+sh -c 'umount -f "$0" && rm -rf "$0"' /var/lib/kubelet/pods/f7bf115d-4a21-4bc0-8aa1-fb47812588a1/volumes/kubernetes.io~projected/kube-api-access-9sm8b
+sh -c 'umount -f "$0" && rm -rf "$0"' /var/lib/kubelet/pods/e6de66dc-364a-40e0-8ece-b590c6599d76/volumes/kubernetes.io~projected/kube-api-access-xvn5v
+sh -c 'umount -f "$0" && rm -rf "$0"' /var/lib/kubelet/pods/882bffe2-e4c2-4fca-aa15-e4e4fbcbc7c5/volumes/kubernetes.io~projected/kube-api-access-rkdss
+sh -c 'umount -f "$0" && rm -rf "$0"' /var/lib/kubelet/pods/1896757b-0b82-49dd-a6f2-162503fecda0/volumes/kubernetes.io~projected/kube-api-access-zthqh
++ do_unmount_and_remove /var/lib/kubelet/plugins
++ set +x
++ do_unmount_and_remove /run/netns/cni-
++ set +x
+sh -c 'umount -f "$0" && rm -rf "$0"' /run/netns/cni-b2d37d96-b7b0-cdcf-43bb-f9a5f1e90365
+sh -c 'umount -f "$0" && rm -rf "$0"' /run/netns/cni-84fdbb01-0158-8f36-e3ce-e3d6f60e0f8f
+sh -c 'umount -f "$0" && rm -rf "$0"' /run/netns/cni-431e6761-a4a8-4550-82ae-1b497b68522e
++ ip netns show
++ grep cni-
++ xargs -r -t -n 1 ip netns delete
++ remove_interfaces
++ ip link show
++ grep 'master cni0'
++ read ignore iface ignore
++ iface=vetheb5e8073
++ '[' -z vetheb5e8073 ']'
++ ip link delete vetheb5e8073
++ read ignore iface ignore
++ iface=veth09e2a519
++ '[' -z veth09e2a519 ']'
++ ip link delete veth09e2a519
++ read ignore iface ignore
++ ip link delete cni0
++ ip link delete flannel.1
++ ip link delete flannel-v6.1
+Cannot find device "flannel-v6.1"
++ ip link delete kube-ipvs0
+Cannot find device "kube-ipvs0"
++ ip link delete flannel-wg
+Cannot find device "flannel-wg"
++ ip link delete flannel-wg-v6
+Cannot find device "flannel-wg-v6"
+++ command -v tailscale
++ '[' -n /usr/bin/tailscale ']'
++ tailscale set --advertise-routes=
++ rm -rf /var/lib/cni/
++ iptables-save
++ grep -v KUBE-
++ grep -v CNI-
++ grep -iv flannel
++ iptables-restore
++ ip6tables-save
++ grep -v KUBE-
++ grep -v CNI-
++ grep -iv flannel
++ ip6tables-restore
++ command -v systemctl
+/usr/bin/systemctl
++ systemctl disable k3s
+Removed /etc/systemd/system/multi-user.target.wants/k3s.service.
++ systemctl reset-failed k3s
+Failed to reset failed state of unit k3s.service: Unit k3s.service not loaded.
++ systemctl daemon-reload
++ command -v rc-update
++ rm -f /etc/systemd/system/k3s.service
++ rm -f /etc/systemd/system/k3s.service.env
++ trap remove_uninstall EXIT
++ for cmd in kubectl crictl ctr
++ '[' -L /usr/local/bin/kubectl ']'
++ rm -f /usr/local/bin/kubectl
++ for cmd in kubectl crictl ctr
++ '[' -L /usr/local/bin/crictl ']'
++ rm -f /usr/local/bin/crictl
++ for cmd in kubectl crictl ctr
++ '[' -L /usr/local/bin/ctr ']'
++ rm -rf /etc/rancher/k3s
++ rm -rf /run/k3s
++ rm -rf /run/flannel
++ clean_mounted_directory /var/lib/rancher/k3s
++ grep -q ' /var/lib/rancher/k3s' /proc/mounts
++ rm -rf /var/lib/rancher/k3s
++ return 0
++ rm -rf /var/lib/kubelet
++ rm -f /usr/local/bin/k3s
++ rm -f /usr/local/bin/k3s-killall.sh
++ rpm_ostree_uninstall_cmd='rpm-ostree uninstall --idempotent k3s-selinux'
++ '[' -r /etc/os-release ']'
++ . /etc/os-release
+++ PRETTY_NAME='Ubuntu 22.04.5 LTS'
+++ NAME=Ubuntu
+++ VERSION_ID=22.04
+++ VERSION='22.04.5 LTS (Jammy Jellyfish)'
+++ VERSION_CODENAME=jammy
+++ ID=ubuntu
+++ ID_LIKE=debian
+++ HOME_URL=https://www.ubuntu.com/
+++ SUPPORT_URL=https://help.ubuntu.com/
+++ BUG_REPORT_URL=https://bugs.launchpad.net/ubuntu/
+++ PRIVACY_POLICY_URL=https://www.ubuntu.com/legal/terms-and-policies/privacy-policy
+++ UBUNTU_CODENAME=jammy
+++ expr debian : '.*suse.*'
++ '[' 0 '!=' 0 ']'
++ '[' ubuntu = fedora ']'
+++ expr debian : '.*fedora.*\|.*rhel.*\|.*centos.*'
++ '[' 0 '!=' 0 ']'
++ type rpm-ostree
++ type zypper
++ type yum
++ '[' -d /usr/share/selinux ']'
++ '[' -d /etc/zypp/repos.d ']'
++ '[' -d /etc/yum.repos.d ']'
++ remove_uninstall
++ rm -f /usr/local/bin/k3s-uninstall.sh
+--- final GPU processes ---
+cleanup_finished=2026-08-28T00:18:57+08:00
