@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "statepool-cloud"
+version = "0.1.0"
+description = "State-aware local, edge and cloud scheduling for long-lived AI assistants"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "StatePool Cloud contributors"}]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.2",
+    "jsonschema>=4.23",
+    "pytest>=8.3",
+    "pyyaml>=6.0",
+    "ruff==0.15.22",
+]
+
+[project.scripts]
+statepool-openai-worker = "statepool_cloud.openai_worker:main"
+statepool-drain = "statepool_cloud.drain:main"
+
+[project.urls]
+Homepage = "https://github.com/123123213weqw/statepool-cloud"
+Documentation = "https://github.com/123123213weqw/statepool-cloud/tree/main/docs"
+Issues = "https://github.com/123123213weqw/statepool-cloud/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+extend-exclude = ["bench/artifacts"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+

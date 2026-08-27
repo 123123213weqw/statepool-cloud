@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
+      - run: ruff check src tests scripts
+      - run: PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 pytest -q
+      - run: python scripts/check_statepool_contracts.py
+      - run: python scripts/check_statepool_deploy.py
+      - run: python -m build
+      - run: docker compose -f deploy/statepool/compose.yaml config --quiet
+
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo fmt --check
+      - run: cargo test --locked
+      - run: cargo clippy --all-targets -- -D warnings
+      - run: cargo build --release --locked
+
+  helm-and-container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v4
+        with:
+          version: v3.19.0
+      - run: helm lint deploy/statepool/helm/statepool
+      - run: helm template statepool deploy/statepool/helm/statepool >/dev/null
+      - run: helm template statepool deploy/statepool/helm/statepool -f deploy/statepool/helm/statepool/values-openai-worker.yaml >/dev/null
+      - run: docker build --target statepool-plugin -f deploy/statepool/Dockerfile .
+      - run: docker build --target openai-worker-adapter -f deploy/statepool/Dockerfile .
+

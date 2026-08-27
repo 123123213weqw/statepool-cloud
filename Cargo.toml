@@ -1,0 +1,16 @@
+[workspace]
+members = [
+    "crates/statepool-plugin-api",
+    "crates/statepool-cloud-plugin",
+]
+default-members = [
+    "crates/statepool-plugin-api",
+    "crates/statepool-cloud-plugin",
+]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+

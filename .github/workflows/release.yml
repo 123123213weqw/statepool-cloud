@@ -1,0 +1,58 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - uses: dtolnay/rust-toolchain@stable
+      - run: python -m pip install build && python -m build
+      - run: cargo build --release --locked -p rwkv-statepool-cloud-plugin
+      - run: |
+          cp target/release/rwkv-statepool-cloud-plugin .
+          sha256sum rwkv-statepool-cloud-plugin dist/* > SHA256SUMS
+      - uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            rwkv-statepool-cloud-plugin
+            dist/*
+            SHA256SUMS
+
+  images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push control plane
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: deploy/statepool/Dockerfile
+          target: statepool-plugin
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/statepool-cloud:${{ github.ref_name }}
+      - name: Build and push OpenAI adapter
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: deploy/statepool/Dockerfile
+          target: openai-worker-adapter
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/statepool-openai-worker:${{ github.ref_name }}
+

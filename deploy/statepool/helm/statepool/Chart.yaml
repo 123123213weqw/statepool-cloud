@@ -1,0 +1,9 @@
+apiVersion: v2
+name: statepool-cloud
+description: State-aware local, edge and cloud scheduling for long-lived AI assistants
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+annotations:
+  statepool.rwkv.dev/profile: localfs-single-replica
+  statepool.rwkv.dev/remote-state-claim: "false"
