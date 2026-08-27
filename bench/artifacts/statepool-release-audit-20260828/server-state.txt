@@ -1,0 +1,18 @@
+captured_at=2026-08-28T00:37:18+08:00
+hostname=wzu-SYS-4029GP-TRT
+source_commit=126cf6fd56ad752f3d3c5a7176c28bd7994238ec
+rustc 1.95.0 (59807616e 2026-04-14)
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+Docker version 28.5.2, build ecc6942
+Docker Compose version v2.40.3
+v3.18.6+gb76a950
+0, Tesla V100-PCIE-32GB, 580.173.02, 32768 MiB
+1, Tesla V100-PCIE-32GB, 580.173.02, 32768 MiB
+--- compute processes ---
+--- StatePool/vLLM/k3s cleanup ---
+matching_containers=0
+k3s_binary=absent
+inactive
+8474febc3b67050392dedd01a04d66a406ee172b45c65e47c690769ea0037e57  /home/wzu/codex-build/statepool-cloud/target/release/rwkv-statepool-cloud-plugin
+6333917b291c69a3afc7db80b9fe86989860171f1cc34713ace2498f9c18d4b4  /home/wzu/codex-build/statepool-cloud/dist/statepool_cloud-0.1.0-py3-none-any.whl
+58376cc93bce84705c8815ee6e200006d18903d8ff15a747b26fa352018a093a  /home/wzu/codex-build/statepool-cloud/dist/statepool_cloud-0.1.0.tar.gz

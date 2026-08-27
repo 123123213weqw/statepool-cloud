@@ -1,0 +1,3 @@
+source_commit=126cf6fd56ad752f3d3c5a7176c28bd7994238ec
+$ cargo clippy --workspace --all-targets --locked -- -D warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.20s

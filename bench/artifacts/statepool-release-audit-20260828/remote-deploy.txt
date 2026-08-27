@@ -1,0 +1,10 @@
+source_commit=126cf6fd56ad752f3d3c5a7176c28bd7994238ec
+$ docker compose config
+$ helm lint/template
+v3.18.6+gb76a950
+==> Linting deploy/statepool/helm/statepool
+[INFO] Chart.yaml: icon is recommended
+
+1 chart(s) linted, 0 chart(s) failed
+helm template default: OK
+helm template openai-worker: OK

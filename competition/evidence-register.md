@@ -28,6 +28,7 @@
 | E24 | 固定 Qwen2.5-0.5B revision 经 vLLM 0.8.5.post1 接入 StatePool | V100 host live inference | 已验证；`affinity_only`、完整 transcript replay | `bench/artifacts/statepool-vllm-v100-live-20260827/` |
 | E25 | `nvidia.com/gpu: 1` Pod 强制删除后新 Pod/Worker 恢复并续写 | 单节点 k3s + NVIDIA device plugin + V100 | 已验证；40.565 s Ready，Worker UID 已替换，输出 `CLOUD-2719` | `bench/artifacts/statepool-k3s-vllm-recovery-20260827/` |
 | E26 | Sticky / Stateless recycle / StatePool managed recycle 三路径 | 同一 k3s Deployment、模型与 V100 级别的 live 单样本 | 已验证可运行；分别 140.959 / 594.176 / 597.921 ms，冷启动约 39–40 s；不是 P95/成本/利用率结论 | `bench/artifacts/statepool-k3s-vllm-recovery-20260827/live-abc-recovery-summary.json` |
+| E27 | v0.1.0 release regression | WZU_Server 远程 Rust/Python/Helm/Compose 审计 | 23 Rust + 22 Python tests，fmt/clippy/release build/package/render 全通过；服务器已清理 | `bench/artifacts/statepool-release-audit-20260828/` |
 
 规则：临时 `/tmp` 日志不算发布证据；正式提交前需要把去敏后的完整输出放入
 `bench/artifacts/`，填写 commit 和 checksum。

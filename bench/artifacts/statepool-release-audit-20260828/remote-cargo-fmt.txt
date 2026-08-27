@@ -1,0 +1,2 @@
+source_commit=126cf6fd56ad752f3d3c5a7176c28bd7994238ec
+$ cargo fmt --all -- --check

@@ -1,0 +1,38 @@
+{
+  "schema_version": "statepool-release-audit.v1",
+  "classification": "remote_release_candidate_verification",
+  "captured_at": "2026-08-28T00:37:18+08:00",
+  "source_repository": "https://github.com/123123213weqw/statepool-cloud",
+  "source_commit": "126cf6fd56ad752f3d3c5a7176c28bd7994238ec",
+  "remote_host": "WZU_Server",
+  "results": {
+    "cargo_fmt": "passed",
+    "cargo_test": {
+      "passed": 23,
+      "ignored_environment_gated": 2,
+      "failed": 0
+    },
+    "cargo_clippy": "passed",
+    "cargo_build_release": "passed",
+    "python_pytest": {
+      "passed": 22,
+      "failed": 0
+    },
+    "ruff": "passed",
+    "contracts": "passed",
+    "deploy_static": "passed",
+    "python_build": "passed",
+    "helm_lint_and_templates": "passed"
+  },
+  "cleanup": {
+    "gpu_compute_processes": 0,
+    "matching_statepool_test_containers": 0,
+    "k3s": "uninstalled_inactive"
+  },
+  "artifact_sha256": {
+    "rwkv-statepool-cloud-plugin": "8474febc3b67050392dedd01a04d66a406ee172b45c65e47c690769ea0037e57",
+    "statepool_cloud-0.1.0-py3-none-any.whl": "6333917b291c69a3afc7db80b9fe86989860171f1cc34713ace2498f9c18d4b4",
+    "statepool_cloud-0.1.0.tar.gz": "58376cc93bce84705c8815ee6e200006d18903d8ff15a747b26fa352018a093a"
+  },
+  "claim_boundary": "Release regression only; hardware and durable-adapter claims remain in their dedicated evidence bundles."
+}
